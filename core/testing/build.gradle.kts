@@ -40,13 +40,9 @@ kotlin {
                 api(libs.kermit.test)
             }
 //
-//         jvmMain.dependencies {
-//             api(libs.koin.test.junit)
-//
-//             api(compose.desktop.currentOs)
-//
-//                api(compose.desktop.uiTestJUnit4)
-//            }
+         jvmMain.dependencies {
+             api(libs.koin.test.junit)
+         }
 
 
     }
