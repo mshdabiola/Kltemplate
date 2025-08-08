@@ -19,7 +19,7 @@
     <string name="version">Версия</string>
     <string name="version_code">Код версии</string>
     <string name="last_update">Последнее обновление</string>
-    <string name="about">Kmtemplate: Отправная точка для ваших проектов на Kotlin Multiplatform, предоставляющая прочную основу и лучшие практики.</string>
+    <string name="about">sample: Отправная точка для ваших проектов на Kotlin Multiplatform, предоставляющая прочную основу и лучшие практики.</string>
     <string name="developed_by">Разработано</string>
     <string name="developer">Mshdabiola</string>
     <string name="contact_us">Связаться с нами</string>

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.mshdabiola.kmtemplate
+package com.hobit.sample
 
 import android.graphics.Color
 import android.os.Bundle
@@ -34,8 +34,8 @@ import com.google.firebase.Firebase
 import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.remoteconfig.remoteConfig
 import com.google.firebase.remoteconfig.remoteConfigSettings
-import com.mshdabiola.kmtemplate.ui.KmtApp
-import com.mshdabiola.kmtemplate.ui.shouldUseDarkTheme
+import com.hobit.sample.ui.SamApp
+import com.hobit.sample.ui.shouldUseDarkTheme
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
@@ -147,7 +147,7 @@ class MainActivity : ComponentActivity() {
                 onDispose {}
             }
 
-            KmtApp()
+            SamApp()
         }
     }
 }

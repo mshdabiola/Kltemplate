@@ -21,12 +21,12 @@ import androidx.compose.material3.LoadingIndicator
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.mshdabiola.designsystem.theme.KmtTheme
+import com.mshdabiola.designsystem.theme.SamTheme
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
-fun KmtLoading(
+fun SamLoading(
     modifier: Modifier = Modifier,
 ) {
     LoadingIndicator(modifier)
@@ -34,7 +34,7 @@ fun KmtLoading(
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
-fun KmtContainedLoading(
+fun SamContainedLoading(
     modifier: Modifier = Modifier,
 ) {
     ContainedLoadingIndicator(modifier)
@@ -42,20 +42,20 @@ fun KmtContainedLoading(
 
 @Preview
 @Composable
-fun KmtLoadingPreview() {
-    KmtTheme {
+fun SamLoadingPreview() {
+    SamTheme {
         Surface {
-            KmtLoading()
+            SamLoading()
         }
     }
 }
 
 @Preview
 @Composable
-fun KmtContainedLoadingPreview() {
-    KmtTheme {
+fun SamContainedLoadingPreview() {
+    SamTheme {
         Surface {
-            KmtContainedLoading()
+            SamContainedLoading()
         }
     }
 }

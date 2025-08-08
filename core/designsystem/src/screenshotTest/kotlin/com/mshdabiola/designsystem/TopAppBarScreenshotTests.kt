@@ -18,16 +18,16 @@ package com.mshdabiola.designsystem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.mshdabiola.designsystem.component.KmtTopAppBar
-import com.mshdabiola.designsystem.theme.KmtTheme
+import com.mshdabiola.designsystem.component.SamTopAppBar
+import com.mshdabiola.designsystem.theme.SamTheme
 
 class TopAppBarScreenshotTests() {
 
     @Preview
     @Composable
     fun TopAppBar() {
-        KmtTheme {
-            KmtTopAppBar(
+        SamTheme {
+            SamTopAppBar(
                 title = { Text("Untitled") },
             )
         }

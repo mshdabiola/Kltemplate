@@ -17,15 +17,15 @@ package com.mshdabiola.database.di
 
 import androidx.room.Room
 import androidx.sqlite.driver.bundled.BundledSQLiteDriver
-import com.mshdabiola.database.KmtDatabase
+import com.mshdabiola.database.SamDatabase
 import com.mshdabiola.database.util.Constant.DATABASE_NAME
 import kotlinx.coroutines.Dispatchers
 import org.koin.core.module.Module
 import org.koin.dsl.module
 import java.io.File
 
-val databasePath = System.getProperty("java.io.tmpdir") + "/kmtemplate"
-// "${System.getProperty("user.home")}/AppData/Local/kmtemplate"
+val databasePath = System.getProperty("java.io.tmpdir") + "/sample"
+// "${System.getProperty("user.home")}/AppData/Local/sample"
 
 actual val databaseModule: Module
     get() =
@@ -36,9 +36,9 @@ actual val databaseModule: Module
             includes(daoModules)
         }
 
-fun getDatabaseBuilder(): KmtDatabase {
+fun getDatabaseBuilder(): SamDatabase {
     val path = File(databasePath, DATABASE_NAME)
-    return Room.databaseBuilder<KmtDatabase>(
+    return Room.databaseBuilder<SamDatabase>(
         name = path.absolutePath,
     )
         .setDriver(BundledSQLiteDriver())

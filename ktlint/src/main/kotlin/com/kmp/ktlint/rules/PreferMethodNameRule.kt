@@ -23,37 +23,37 @@ import org.jetbrains.kotlin.com.intellij.lang.ASTNode
 import org.jetbrains.kotlin.psi.KtCallExpression
 
 class PreferMethodNameRule : Rule(
-    RuleId("kmtemplate:prefer-method-name"),
+    RuleId("sample:prefer-method-name"),
     about =
     Rule.About(
         maintainer = "Your Name",
-        repositoryUrl = "https://github.com/mshdabiola/kmtemplate",
-        issueTrackerUrl = "https://github.com/mshdabiola/kmtemplate",
+        repositoryUrl = "https://github.com/mshdabiola/sample",
+        issueTrackerUrl = "https://github.com/mshdabiola/sample",
     ),
 ) {
     // Define the mapping of deprecated method names to preferred method names
     private val methodNameReplacements =
         mapOf(
-            "MaterialTheme" to "KmtTheme",
-            "Button" to "KmtButton",
-            "OutlinedButton" to "KmtOutlinedButton",
-            "TextButton" to "KmtTextButton",
-            "FilterChip" to "KmtFilterChip",
-            "ElevatedFilterChip" to "KmtFilterChip",
-            "NavigationBar" to "KmtNavigationBar",
-            "NavigationBarItem" to "KmtNavigationBarItem",
-            "NavigationRail" to "KmtNavigationRail",
-            "NavigationRailItem" to "KmtNavigationRailItem",
-            "TabRow" to "KmtTabRow",
-            "Tab" to "KmtTab",
-            "IconToggleButton" to "KmtIconToggleButton",
-            "FilledIconToggleButton" to "KmtIconToggleButton",
-            "FilledTonalIconToggleButton" to "KmtIconToggleButton",
-            "OutlinedIconToggleButton" to "KmtIconToggleButton",
-            "CenterAlignedTopAppBar" to "KmtTopAppBar",
-            "SmallTopAppBar" to "KmtTopAppBar",
-            "MediumTopAppBar" to "KmtTopAppBar",
-            "LargeTopAppBar" to "KmtTopAppBar",
+            "MaterialTheme" to "SamTheme",
+            "Button" to "SamButton",
+            "OutlinedButton" to "SamOutlinedButton",
+            "TextButton" to "SamTextButton",
+            "FilterChip" to "SamFilterChip",
+            "ElevatedFilterChip" to "SamFilterChip",
+            "NavigationBar" to "SamNavigationBar",
+            "NavigationBarItem" to "SamNavigationBarItem",
+            "NavigationRail" to "SamNavigationRail",
+            "NavigationRailItem" to "SamNavigationRailItem",
+            "TabRow" to "SamTabRow",
+            "Tab" to "SamTab",
+            "IconToggleButton" to "SamIconToggleButton",
+            "FilledIconToggleButton" to "SamIconToggleButton",
+            "FilledTonalIconToggleButton" to "SamIconToggleButton",
+            "OutlinedIconToggleButton" to "SamIconToggleButton",
+            "CenterAlignedTopAppBar" to "SamTopAppBar",
+            "SmallTopAppBar" to "SamTopAppBar",
+            "MediumTopAppBar" to "SamTopAppBar",
+            "LargeTopAppBar" to "SamTopAppBar",
         )
 
     override fun beforeVisitChildNodes(

@@ -17,25 +17,25 @@ package com.mshdabiola.designsystem
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.mshdabiola.designsystem.component.KmtContainedLoading
-import com.mshdabiola.designsystem.component.KmtLoading
-import com.mshdabiola.designsystem.theme.KmtTheme
+import com.mshdabiola.designsystem.component.SamContainedLoading
+import com.mshdabiola.designsystem.component.SamLoading
+import com.mshdabiola.designsystem.theme.SamTheme
 
 class LoadingWheelScreenshotTests {
 
     @Preview
     @Composable
     fun LoadingWheel() {
-        KmtTheme {
-            KmtLoading()
+        SamTheme {
+            SamLoading()
         }
     }
 
     @Preview
     @Composable
     fun OverlayLoadingWheel() {
-        KmtTheme {
-            KmtContainedLoading()
+        SamTheme {
+            SamContainedLoading()
         }
     }
 }

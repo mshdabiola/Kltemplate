@@ -20,7 +20,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.mshdabiola.designsystem.DevicePreviews
-import com.mshdabiola.designsystem.theme.KmtTheme
+import com.mshdabiola.designsystem.theme.SamTheme
 import com.mshdabiola.model.DarkThemeConfig
 
 // Note: SettingDetailScreenScreenshotTests was originally testing AppearanceScreen.
@@ -41,7 +41,7 @@ class SettingDetailScreenScreenshotTests {
     @DevicePreviews
     @Composable
     fun SettingDetail_Appearance_Light_WithBack() {
-        KmtTheme(darkTheme = false) {
+        SamTheme(darkTheme = false) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 SettingDetailScreen(
                     onBack = sampleOnBack,
@@ -57,7 +57,7 @@ class SettingDetailScreenScreenshotTests {
     @DevicePreviews
     @Composable
     fun SettingDetail_Appearance_Dark_WithBack_LowContrast_DarkModeSelected() {
-        KmtTheme(darkTheme = true) {
+        SamTheme(darkTheme = true) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 SettingDetailScreen(
                     onBack = sampleOnBack,
@@ -76,7 +76,7 @@ class SettingDetailScreenScreenshotTests {
     @DevicePreviews
     @Composable
     fun SettingDetail_Appearance_Light_NoBack() {
-        KmtTheme(darkTheme = false) {
+        SamTheme(darkTheme = false) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 SettingDetailScreen(
                     onBack = null, // No back action
@@ -94,7 +94,7 @@ class SettingDetailScreenScreenshotTests {
     @DevicePreviews
     @Composable
     fun SettingDetail_Faq_Light_WithBack() {
-        KmtTheme(darkTheme = false) {
+        SamTheme(darkTheme = false) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 SettingDetailScreen(
                     onBack = sampleOnBack,
@@ -108,7 +108,7 @@ class SettingDetailScreenScreenshotTests {
     @DevicePreviews
     @Composable
     fun SettingDetail_Faq_Dark_NoBack() {
-        KmtTheme(darkTheme = true) {
+        SamTheme(darkTheme = true) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 SettingDetailScreen(
                     onBack = null, // No back action
@@ -124,7 +124,7 @@ class SettingDetailScreenScreenshotTests {
     @DevicePreviews
     @Composable
     fun SettingDetail_About_Light_WithBack() {
-        KmtTheme(darkTheme = false) {
+        SamTheme(darkTheme = false) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 SettingDetailScreen(
                     onBack = sampleOnBack,
@@ -138,7 +138,7 @@ class SettingDetailScreenScreenshotTests {
     @DevicePreviews
     @Composable
     fun SettingDetail_About_Dark_NoBack() {
-        KmtTheme(darkTheme = true) {
+        SamTheme(darkTheme = true) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 SettingDetailScreen(
                     onBack = null, // No back action
@@ -156,7 +156,7 @@ class SettingDetailScreenScreenshotTests {
     @DevicePreviews
     @Composable
     fun SettingDetail_Issue_Light_WithBack() {
-        KmtTheme(darkTheme = false) {
+        SamTheme(darkTheme = false) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 SettingDetailScreen(
                     onBack = sampleOnBack,
@@ -170,7 +170,7 @@ class SettingDetailScreenScreenshotTests {
     @DevicePreviews
     @Composable
     fun SettingDetail_Issue_Dark_NoBack() {
-        KmtTheme(darkTheme = true) {
+        SamTheme(darkTheme = true) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 SettingDetailScreen(
                     onBack = null, // No back action

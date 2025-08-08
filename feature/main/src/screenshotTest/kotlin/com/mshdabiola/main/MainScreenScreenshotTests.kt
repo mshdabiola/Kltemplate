@@ -51,7 +51,7 @@ internal fun MainScreenSuccessPreview() {
         Note(id = 2, title = "Second Note", content = "Content for the second one, a bit longer perhaps..."),
         Note(id = 3, title = "Third Note", content = "A short one."),
     )
-    // KmtTheme {
+    // SamTheme {
     SharedTransitionContainer {
         MainScreen(
             mainState = MainState.Success(sampleNotes),
@@ -61,7 +61,7 @@ internal fun MainScreenSuccessPreview() {
 }
 
 // If you have a custom @ThemePreviews annotation that applies your theme and device configs,
-// you can use that instead of manually wrapping in KmtTheme.
+// you can use that instead of manually wrapping in SamTheme.
 // For example, if @ThemePreviews combines @Preview and light/dark themes:
 
 @ThemePreviews // Assuming this applies necessary theming and preview configurations

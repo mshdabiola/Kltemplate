@@ -23,7 +23,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.ProvidableCompositionLocal
 import androidx.compose.runtime.compositionLocalOf
-import com.mshdabiola.designsystem.theme.KmtTheme
+import com.mshdabiola.designsystem.theme.SamTheme
 
 @OptIn(ExperimentalSharedTransitionApi::class)
 val LocalSharedTransitionScope: ProvidableCompositionLocal<SharedTransitionScope> =
@@ -47,7 +47,7 @@ fun SharedTransitionContainer(
     isDarkMode: Boolean = false,
     content: @Composable () -> Unit,
 ) {
-    KmtTheme(darkTheme = isDarkMode) {
+    SamTheme(darkTheme = isDarkMode) {
         SharedTransitionScope {
             AnimatedContent(true) {
                 CompositionLocalProvider(

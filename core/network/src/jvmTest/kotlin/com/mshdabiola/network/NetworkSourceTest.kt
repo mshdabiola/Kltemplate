@@ -106,25 +106,25 @@ class NetworkDataSourceTest {
     }
 
     @Test
-    fun `getLatestKmtemplateRelease successfully returns release info including assets`() = runTest {
+    fun `getLatestsampleRelease successfully returns release info including assets`() = runTest {
         val expectedReleaseJson = """{
             "tag_name": "v1.0.0",
             "name": "Initial Release",
             "body": "This is the first release.",
-            "html_url": "https://github.com/mshdabiola/kmtemplate/releases/tag/v1.0.0",
+            "html_url": "https://github.com/mshdabiola/sample/releases/tag/v1.0.0",
             "assets": [
                 {
-                    "browser_download_url": "https://github.com/mshdabiola/kmtemplate/releases/download/v1.0.0/kmtemplate.apk",
+                    "browser_download_url": "https://github.com/mshdabiola/sample/releases/download/v1.0.0/sample.apk",
                     "size": 1234567
                 },
                 {
-                    "browser_download_url": "https://github.com/mshdabiola/kmtemplate/releases/download/v1.0.0/source.zip",
+                    "browser_download_url": "https://github.com/mshdabiola/sample/releases/download/v1.0.0/source.zip",
                     "size": 7654321
                 }
             ]
         }"""
         val mockEngine = MockEngine { request ->
-            assertEquals("https://api.github.com/repos/mshdabiola/kmtemplate/releases/latest", request.url.toString())
+            assertEquals("https://api.github.com/repos/mshdabiola/sample/releases/latest", request.url.toString())
             respond(
                 content = expectedReleaseJson,
                 status = HttpStatusCode.OK,
@@ -139,13 +139,13 @@ class NetworkDataSourceTest {
         }
 
         val networkDataSource = RealNetworkDataSource(httpClient)
-        val result = networkDataSource.getLatestKmtemplateRelease()
+        val result = networkDataSource.getLatestsampleRelease()
 
         assertNotNull(result)
         assertEquals("v1.0.0", result.tagName)
         assertEquals("Initial Release", result.releaseName)
         assertEquals("This is the first release.", result.body)
-        assertEquals("https://github.com/mshdabiola/kmtemplate/releases/tag/v1.0.0", result.htmlUrl)
+        assertEquals("https://github.com/mshdabiola/sample/releases/tag/v1.0.0", result.htmlUrl)
 
         assertNotNull(result.assets)
         assertEquals(2, result.assets.size)
@@ -153,7 +153,7 @@ class NetworkDataSourceTest {
         val firstAsset = result.assets[0]
         assertNotNull(firstAsset)
         assertEquals(
-            "https://github.com/mshdabiola/kmtemplate/releases/download/v1.0.0/kmtemplate.apk",
+            "https://github.com/mshdabiola/sample/releases/download/v1.0.0/sample.apk",
             firstAsset?.browserDownloadUrl,
         )
         assertEquals(1234567, firstAsset.size)
@@ -161,7 +161,7 @@ class NetworkDataSourceTest {
         val secondAsset = result.assets.get(1)
         assertNotNull(secondAsset)
         assertEquals(
-            "https://github.com/mshdabiola/kmtemplate/releases/download/v1.0.0/source.zip",
+            "https://github.com/mshdabiola/sample/releases/download/v1.0.0/source.zip",
             secondAsset?.browserDownloadUrl,
         )
         assertEquals(7654321, secondAsset.size)
@@ -170,9 +170,9 @@ class NetworkDataSourceTest {
     }
 
     @Test
-    fun `getLatestKmtemplateRelease handles HTTP error`() = runTest {
+    fun `getLatestsampleRelease handles HTTP error`() = runTest {
         val mockEngine = MockEngine { request ->
-            assertEquals("https://api.github.com/repos/mshdabiola/kmtemplate/releases/latest", request.url.toString())
+            assertEquals("https://api.github.com/repos/mshdabiola/sample/releases/latest", request.url.toString())
             respond(
                 content = "Error: Repository Not Found",
                 status = HttpStatusCode.NotFound,
@@ -188,7 +188,7 @@ class NetworkDataSourceTest {
         val networkDataSource = RealNetworkDataSource(httpClient)
 
         try {
-            networkDataSource.getLatestKmtemplateRelease()
+            networkDataSource.getLatestsampleRelease()
             fail("Expected ClientRequestException for HTTP error")
         } catch (e: ClientRequestException) {
             assertEquals(HttpStatusCode.NotFound, e.response.status)
@@ -200,7 +200,7 @@ class NetworkDataSourceTest {
     }
 
     @Test
-    fun `getLatestKmtemplateRelease handles network error`() = runTest {
+    fun `getLatestsampleRelease handles network error`() = runTest {
         val mockEngine = MockEngine {
             throw java.io.IOException("Simulated network problem for GitHub API")
         }
@@ -213,7 +213,7 @@ class NetworkDataSourceTest {
         val networkDataSource = RealNetworkDataSource(httpClient)
 
         try {
-            networkDataSource.getLatestKmtemplateRelease()
+            networkDataSource.getLatestsampleRelease()
             fail("Expected IOException for network error")
         } catch (e: java.io.IOException) {
             assertEquals("Simulated network problem for GitHub API", e.message)

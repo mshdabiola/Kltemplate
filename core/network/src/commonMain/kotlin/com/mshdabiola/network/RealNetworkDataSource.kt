@@ -34,9 +34,9 @@ class RealNetworkDataSource(
         return response.body()
     }
 
-    override suspend fun getLatestKmtemplateRelease(): GitHubReleaseInfo {
+    override suspend fun getLatestsampleRelease(): GitHubReleaseInfo {
         val response: HttpResponse = httpClient.get(
-            "https://api.github.com/repos/mshdabiola/kmtemplate/releases/latest",
+            "https://api.github.com/repos/mshdabiola/sample/releases/latest",
         )
         if (!response.status.isSuccess()) {
             // You might want to throw a more specific exception or return a sealed result type

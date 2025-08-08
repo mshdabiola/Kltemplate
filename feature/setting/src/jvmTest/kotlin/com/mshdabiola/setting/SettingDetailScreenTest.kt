@@ -20,7 +20,7 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
-import com.mshdabiola.designsystem.theme.KmtTheme
+import com.mshdabiola.designsystem.theme.SamTheme
 import com.mshdabiola.model.DarkThemeConfig
 import com.mshdabiola.model.testtag.AboutScreenTestTags
 import com.mshdabiola.model.testtag.AppearanceScreenTestTags
@@ -63,7 +63,7 @@ class SettingDetailScreenTest {
         val expectedTitle = getExpectedTitle(currentNav) // Or directly use the known string if simpler
 
         composeRule.setContent {
-            KmtTheme {
+            SamTheme {
                 SettingDetailScreen(
                     onBack = {}, // Provide a non-null onBack to show the back button
                     settingNav = currentNav,
@@ -85,7 +85,7 @@ class SettingDetailScreenTest {
     fun settingDetailScreen_backButton_displaysWhenOnBackIsNotNull() {
         var backClicked = false
         composeRule.setContent {
-            KmtTheme {
+            SamTheme {
                 SettingDetailScreen(
                     onBack = { backClicked = true },
                     settingNav = SettingNav.Faq,
@@ -104,7 +104,7 @@ class SettingDetailScreenTest {
     @Test
     fun settingDetailScreen_backButton_doesNotExistWhenOnBackIsNull() {
         composeRule.setContent {
-            KmtTheme {
+            SamTheme {
                 SettingDetailScreen(
                     onBack = null, // Key: onBack is null
                     settingNav = SettingNav.About,
@@ -119,7 +119,7 @@ class SettingDetailScreenTest {
     @Test
     fun settingDetailScreen_showsFaqScreen_whenNavIsFaq() {
         composeRule.setContent {
-            KmtTheme {
+            SamTheme {
                 SettingDetailScreen(
                     onBack = {},
                     settingNav = SettingNav.Faq,
@@ -137,7 +137,7 @@ class SettingDetailScreenTest {
     @Test
     fun settingDetailScreen_showsAboutScreen_whenNavIsAbout() {
         composeRule.setContent {
-            KmtTheme {
+            SamTheme {
                 SettingDetailScreen(
                     onBack = {},
                     settingNav = SettingNav.About,
@@ -156,7 +156,7 @@ class SettingDetailScreenTest {
         var darkModeChangedValue: DarkThemeConfig? = null
 
         composeRule.setContent {
-            KmtTheme {
+            SamTheme {
                 SettingDetailScreen(
                     onBack = {},
                     settingNav = SettingNav.Appearance,
@@ -196,7 +196,7 @@ class SettingDetailScreenTest {
         // from FaqScreen, AboutScreen, or AppearanceScreen, as per the TODO.
         // If Issue had its own specific content/tag, you'd check for that.
         composeRule.setContent {
-            KmtTheme {
+            SamTheme {
                 SettingDetailScreen(
                     onBack = {},
                     settingNav = SettingNav.Issue, // The "Issue" case in the when statement

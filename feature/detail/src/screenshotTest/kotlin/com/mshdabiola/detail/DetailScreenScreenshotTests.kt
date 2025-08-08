@@ -22,7 +22,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.mshdabiola.designsystem.DevicePreviews
-import com.mshdabiola.designsystem.theme.KmtTheme
+import com.mshdabiola.designsystem.theme.SamTheme
 import com.mshdabiola.ui.SharedTransitionContainer // Import for consistency with UI tests
 
 @OptIn(ExperimentalSharedTransitionApi::class) // For SharedTransitionContainer and DetailScreen params
@@ -39,7 +39,7 @@ class DetailScreenScreenshotTests {
             title = TextFieldState("Sample Note Title"),
             detail = TextFieldState("This is the detailed content of the sample note."),
         )
-        KmtTheme(darkTheme = false) {
+        SamTheme(darkTheme = false) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 SharedTransitionContainer {
                     // Match UI test setup
@@ -62,7 +62,7 @@ class DetailScreenScreenshotTests {
             title = TextFieldState("Another Note Title"),
             detail = TextFieldState("Dark mode content example."),
         )
-        KmtTheme(darkTheme = true) {
+        SamTheme(darkTheme = true) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 SharedTransitionContainer {
                     DetailScreen(
@@ -84,7 +84,7 @@ class DetailScreenScreenshotTests {
             title = TextFieldState(""), // Empty title
             detail = TextFieldState(""), // Empty detail
         )
-        KmtTheme(darkTheme = false) {
+        SamTheme(darkTheme = false) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 SharedTransitionContainer {
                     DetailScreen(
@@ -106,7 +106,7 @@ class DetailScreenScreenshotTests {
             title = TextFieldState(""), // Empty title
             detail = TextFieldState(""), // Empty detail
         )
-        KmtTheme(darkTheme = true) {
+        SamTheme(darkTheme = true) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 SharedTransitionContainer {
                     DetailScreen(
@@ -134,7 +134,7 @@ class DetailScreenScreenshotTests {
             title = TextFieldState("Note With Very Long Content"),
             detail = TextFieldState(longContent),
         )
-        KmtTheme(darkTheme = false) {
+        SamTheme(darkTheme = false) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 SharedTransitionContainer {
                     DetailScreen(

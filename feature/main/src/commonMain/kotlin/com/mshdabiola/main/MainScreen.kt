@@ -43,11 +43,11 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.mshdabiola.designsystem.component.KmtIconButton
-import com.mshdabiola.designsystem.component.KmtLoading
-import com.mshdabiola.designsystem.component.KmtTopAppBar
-import com.mshdabiola.designsystem.drawable.KmtIcons
-import com.mshdabiola.designsystem.strings.KmtStrings
+import com.mshdabiola.designsystem.component.SamIconButton
+import com.mshdabiola.designsystem.component.SamLoading
+import com.mshdabiola.designsystem.component.SamTopAppBar
+import com.mshdabiola.designsystem.drawable.SamIcons
+import com.mshdabiola.designsystem.strings.SamStrings
 import com.mshdabiola.designsystem.theme.LocalTintTheme
 import com.mshdabiola.model.testtag.MainScreenTestTags
 import com.mshdabiola.ui.NoteCard
@@ -55,10 +55,10 @@ import io.github.alexzhirkevich.compottie.Compottie
 import io.github.alexzhirkevich.compottie.LottieCompositionSpec
 import io.github.alexzhirkevich.compottie.rememberLottieComposition
 import io.github.alexzhirkevich.compottie.rememberLottiePainter
-import kmtemplate.feature.main.generated.resources.Res
-import kmtemplate.feature.main.generated.resources.features_main_empty_body
-import kmtemplate.feature.main.generated.resources.features_main_empty_title
-import kmtemplate.feature.main.generated.resources.features_main_screen_title_home
+import sample.feature.main.generated.resources.Res
+import sample.feature.main.generated.resources.features_main_empty_body
+import sample.feature.main.generated.resources.features_main_empty_title
+import sample.feature.main.generated.resources.features_main_screen_title_home
 import org.jetbrains.compose.resources.stringResource
 
 @OptIn(
@@ -75,14 +75,14 @@ internal fun MainScreen(
     Scaffold(
         modifier = modifier.testTag(MainScreenTestTags.SCREEN_ROOT), // Apply testTag to the root
         topBar = {
-            KmtTopAppBar(
+            SamTopAppBar(
                 modifier = Modifier.testTag(MainScreenTestTags.TOP_APP_BAR),
                 title = {
                     Text(
                         if (onDrawer !=
                             null
                         ) {
-                            KmtStrings.brand
+                            SamStrings.brand
                         } else {
                             stringResource(Res.string.features_main_screen_title_home)
                         },
@@ -91,8 +91,8 @@ internal fun MainScreen(
                 titleHorizontalAlignment = Alignment.Start,
                 navigationIcon = {
                     if (onDrawer != null) {
-                        KmtIconButton(onClick = onDrawer) {
-                            Icon(KmtIcons.Menu, "menu")
+                        SamIconButton(onClick = onDrawer) {
+                            Icon(SamIcons.Menu, "menu")
                         }
                     }
                 },
@@ -109,8 +109,8 @@ internal fun MainScreen(
                         .testTag(MainScreenTestTags.LOADING_INDICATOR), // Tag for loading state
                     contentAlignment = Alignment.Center,
                 ) {
-                    KmtLoading() // If KmtLoading is a simple composable, this tag might be on the Box.
-                    // If KmtLoading is complex, it might need its own internal tags.
+                    SamLoading() // If SamLoading is a simple composable, this tag might be on the Box.
+                    // If SamLoading is complex, it might need its own internal tags.
                 }
             }
             is MainState.Empty -> {

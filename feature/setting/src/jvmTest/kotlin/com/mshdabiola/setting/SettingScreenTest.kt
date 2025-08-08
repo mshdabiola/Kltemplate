@@ -21,7 +21,7 @@ import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onFirst
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
-import com.mshdabiola.designsystem.theme.KmtTheme
+import com.mshdabiola.designsystem.theme.SamTheme
 import com.mshdabiola.model.DarkThemeConfig
 import com.mshdabiola.model.testtag.AppearanceScreenTestTags
 import com.mshdabiola.model.testtag.FaqScreenTestTags
@@ -51,7 +51,7 @@ class SettingScreenTest {
     @Test
     fun settingScreen_initialState_displaysListPane() {
         composeRule.setContent {
-            KmtTheme {
+            SamTheme {
                 SettingScreen(
                     onDrawer = null,
                     settingState = initialSettingState,
@@ -73,7 +73,7 @@ class SettingScreenTest {
         // var onDarkModeChangedCalledWith: DarkThemeConfig? = null // Keep if you test DarkMode changes
 
         composeRule.setContent {
-            KmtTheme {
+            SamTheme {
                 SettingScreen(
                     onDrawer = null,
                     settingState = initialSettingState,
@@ -117,7 +117,7 @@ class SettingScreenTest {
     @Test
     fun settingScreen_detailPane_backNavigationWorks() {
         composeRule.setContent {
-            KmtTheme {
+            SamTheme {
                 SettingScreen(
                     onDrawer = null,
                     settingState = initialSettingState,
@@ -148,7 +148,7 @@ class SettingScreenTest {
     fun settingScreen_withDrawer_menuIconIsPresentAndClickable() {
         var drawerOpened = false
         composeRule.setContent {
-            KmtTheme {
+            SamTheme {
                 SettingScreen(
                     onDrawer = { drawerOpened = true }, // Provide onDrawer
                     settingState = initialSettingState,
@@ -167,7 +167,7 @@ class SettingScreenTest {
     @Test
     fun settingScreen_withoutDrawer_menuIconIsNotPresent() {
         composeRule.setContent {
-            KmtTheme {
+            SamTheme {
                 SettingScreen(
                     onDrawer = null, // No onDrawer
                     settingState = initialSettingState,
@@ -184,7 +184,7 @@ class SettingScreenTest {
         // We focus on the side effect: no navigation to a detail pane.
 
         composeRule.setContent {
-            KmtTheme {
+            SamTheme {
                 SettingScreen(
                     onDrawer = null,
                     settingState = initialSettingState,

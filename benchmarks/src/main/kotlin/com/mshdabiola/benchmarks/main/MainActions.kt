@@ -21,11 +21,11 @@ import androidx.benchmark.macro.MacrobenchmarkScope
 import androidx.test.uiautomator.By
 import androidx.test.uiautomator.Until
 import com.mshdabiola.benchmarks.flingElementDownUp
-import com.mshdabiola.model.testtag.KmtScaffoldTestTags
+import com.mshdabiola.model.testtag.SamScaffoldTestTags
 import com.mshdabiola.model.testtag.MainScreenTestTags
 
 fun MacrobenchmarkScope.goToDetailScreen() {
-    val savedSelector = By.res(KmtScaffoldTestTags.FabTestTags.EXTENDED_FAB)
+    val savedSelector = By.res(SamScaffoldTestTags.FabTestTags.EXTENDED_FAB)
 
     device.wait(Until.hasObject(savedSelector), 5000)
 

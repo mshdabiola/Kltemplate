@@ -27,7 +27,7 @@ plugins {
 
 }
 
-group = "com.mshdabiola.kmtemplate"
+group = "com.hobit.sample"
 version = libs.versions.versionName.get()
 
 dependencies {
@@ -127,10 +127,10 @@ android {
     sourceSets["main"].res.srcDirs("src/androidMain/res")
     sourceSets["main"].resources.srcDirs("src/commonMain/composeResources")
 
-    namespace = "com.mshdabiola.kmtemplate"
+    namespace = "com.hobit.sample"
     experimentalProperties["android.experimental.enableScreenshotTest"] = true
     defaultConfig {
-        applicationId = "com.mshdabiola.kmtemplate"
+        applicationId = "com.hobit.sample"
         versionCode = libs.versions.versionCode.get().toIntOrNull()
         versionName = System.getenv("VERSION_NAME") ?: libs.versions.versionName.get()
 
@@ -188,7 +188,7 @@ android {
 
 compose.desktop {
     application {
-        mainClass = "com.mshdabiola.kmtemplate.MainAppKt"
+        mainClass = "com.hobit.sample.MainAppKt"
 
 
         buildTypes.release.proguard {

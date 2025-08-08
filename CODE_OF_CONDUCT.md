@@ -1,4 +1,4 @@
-# Code of Conduct for Kmtemplate
+# Code of Conduct for sample
 
 ## Our Pledge
 

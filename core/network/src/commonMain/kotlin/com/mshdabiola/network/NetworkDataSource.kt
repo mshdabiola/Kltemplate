@@ -20,5 +20,5 @@ import io.ktor.client.request.get
 
 interface NetworkDataSource {
     suspend fun goToGoogle(): String
-    suspend fun getLatestKmtemplateRelease(): GitHubReleaseInfo
+    suspend fun getLatestsampleRelease(): GitHubReleaseInfo
 }

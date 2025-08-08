@@ -29,7 +29,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.ImeAction
 
 @Composable
-fun KmtTextField(
+fun SamTextField(
     modifier: Modifier = Modifier,
     state: TextFieldState,
     placeholder: String? = null,

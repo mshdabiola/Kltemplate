@@ -30,7 +30,7 @@ import androidx.compose.ui.Modifier
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
-fun KmtButton(
+fun SamButton(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
@@ -49,7 +49,7 @@ fun KmtButton(
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
-fun KmtTextButton(
+fun SamTextButton(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
@@ -69,7 +69,7 @@ fun KmtTextButton(
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
-fun KmtButton(
+fun SamButton(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
@@ -93,7 +93,7 @@ fun KmtButton(
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
-fun KmtIconButton(
+fun SamIconButton(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
     enabled: Boolean = true,

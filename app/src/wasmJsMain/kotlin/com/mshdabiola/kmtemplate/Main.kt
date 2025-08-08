@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.mshdabiola.kmtemplate
+package com.hobit.sample
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -28,9 +28,9 @@ import co.touchlab.kermit.Logger
 import co.touchlab.kermit.Severity
 import co.touchlab.kermit.loggerConfigInit
 import co.touchlab.kermit.platformLogWriter
-import com.mshdabiola.kmtemplate.di.appModule
-import com.mshdabiola.kmtemplate.ui.KmtApp
-import com.mshdabiola.kmtemplate.ui.SplashScreen
+import com.hobit.sample.di.appModule
+import com.hobit.sample.ui.SamApp
+import com.hobit.sample.ui.SplashScreen
 import com.mshdabiola.model.Platform
 import kotlinx.browser.document
 import kotlinx.coroutines.delay
@@ -47,7 +47,7 @@ fun mainApp() {
             show.value = false
         }
         Box(Modifier.fillMaxSize()) {
-            KmtApp()
+            SamApp()
             if (show.value) {
                 SplashScreen()
             }

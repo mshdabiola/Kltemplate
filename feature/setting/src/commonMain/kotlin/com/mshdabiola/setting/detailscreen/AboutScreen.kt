@@ -37,21 +37,21 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
-import com.mshdabiola.designsystem.component.KmtTextButton
-import com.mshdabiola.designsystem.drawable.KmtIcons
-import com.mshdabiola.designsystem.strings.KmtStrings
-import com.mshdabiola.designsystem.theme.KmtTheme
+import com.mshdabiola.designsystem.component.SamTextButton
+import com.mshdabiola.designsystem.drawable.SamIcons
+import com.mshdabiola.designsystem.strings.SamStrings
+import com.mshdabiola.designsystem.theme.SamTheme
 import com.mshdabiola.model.testtag.AboutScreenTestTags
-import kmtemplate.feature.setting.generated.resources.Res
-import kmtemplate.feature.setting.generated.resources.about
-import kmtemplate.feature.setting.generated.resources.contact_us
-import kmtemplate.feature.setting.generated.resources.developed_by
-import kmtemplate.feature.setting.generated.resources.developer
-import kmtemplate.feature.setting.generated.resources.last_update
-import kmtemplate.feature.setting.generated.resources.privacy_policy
-import kmtemplate.feature.setting.generated.resources.terms_and_condition
-import kmtemplate.feature.setting.generated.resources.version
-import kmtemplate.feature.setting.generated.resources.version_code
+import sample.feature.setting.generated.resources.Res
+import sample.feature.setting.generated.resources.about
+import sample.feature.setting.generated.resources.contact_us
+import sample.feature.setting.generated.resources.developed_by
+import sample.feature.setting.generated.resources.developer
+import sample.feature.setting.generated.resources.last_update
+import sample.feature.setting.generated.resources.privacy_policy
+import sample.feature.setting.generated.resources.terms_and_condition
+import sample.feature.setting.generated.resources.version
+import sample.feature.setting.generated.resources.version_code
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
@@ -71,7 +71,7 @@ fun AboutScreen(
         horizontalAlignment = Alignment.Start,
     ) {
         Icon(
-            imageVector = KmtIcons.AppIcon,
+            imageVector = SamIcons.AppIcon,
             contentDescription = "App Logo",
             modifier = Modifier
                 .align(Alignment.CenterHorizontally)
@@ -81,7 +81,7 @@ fun AboutScreen(
         )
 
         Text(
-            text = KmtStrings.brand,
+            text = SamStrings.brand,
             style = MaterialTheme.typography.headlineMedium,
             color = MaterialTheme.colorScheme.primary,
             modifier = Modifier
@@ -117,7 +117,7 @@ fun AboutScreen(
             modifier = Modifier.testTag(AboutScreenTestTags.VERSION_NAME_LABEL),
         )
         Text(
-            text = KmtStrings.version,
+            text = SamStrings.version,
             style = MaterialTheme.typography.bodyLarge,
             color = MaterialTheme.colorScheme.onSurface,
             modifier = Modifier.testTag(AboutScreenTestTags.VERSION_NAME_VALUE),
@@ -131,7 +131,7 @@ fun AboutScreen(
             modifier = Modifier.testTag(AboutScreenTestTags.VERSION_CODE_LABEL),
         )
         Text(
-            text = KmtStrings.versionCode,
+            text = SamStrings.versionCode,
             style = MaterialTheme.typography.bodyLarge,
             color = MaterialTheme.colorScheme.onSurface,
             modifier = Modifier.testTag(AboutScreenTestTags.VERSION_CODE_VALUE),
@@ -145,7 +145,7 @@ fun AboutScreen(
             modifier = Modifier.testTag(AboutScreenTestTags.LAST_UPDATE_LABEL),
         )
         Text(
-            text = KmtStrings.lastUpdate,
+            text = SamStrings.lastUpdate,
             style = MaterialTheme.typography.bodyLarge,
             color = MaterialTheme.colorScheme.onSurface,
             modifier = Modifier.testTag(AboutScreenTestTags.LAST_UPDATE_VALUE),
@@ -184,7 +184,7 @@ fun AboutScreen(
                 .clickable {
                     openEmail(
                         "mshdabiola@gmail.com",
-                        "Feedback for Kmtemplate",
+                        "Feedback for sample",
                         "",
                     )
                 }
@@ -192,7 +192,7 @@ fun AboutScreen(
                 .testTag(AboutScreenTestTags.EMAIL_LINK),
         )
 
-        KmtTextButton(
+        SamTextButton(
             onClick = {},
             contentPadding = PaddingValues(vertical = 4.dp),
             modifier = Modifier.testTag(AboutScreenTestTags.PRIVACY_POLICY_BUTTON),
@@ -200,7 +200,7 @@ fun AboutScreen(
             Text(stringResource(Res.string.privacy_policy))
         }
 
-        KmtTextButton(
+        SamTextButton(
             onClick = {},
             contentPadding = PaddingValues(vertical = 4.dp),
             modifier = Modifier.testTag(AboutScreenTestTags.TERMS_AND_CONDITIONS_BUTTON),
@@ -214,7 +214,7 @@ fun AboutScreen(
 @Preview(showBackground = true)
 @Composable
 fun AboutScreenPreview() {
-    KmtTheme {
+    SamTheme {
         AboutScreen()
     }
 }

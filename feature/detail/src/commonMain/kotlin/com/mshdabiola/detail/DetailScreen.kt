@@ -30,20 +30,20 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag // Import testTag
 import androidx.compose.ui.text.input.ImeAction
-import com.mshdabiola.designsystem.component.KmtIconButton
-import com.mshdabiola.designsystem.component.KmtTextField
-import com.mshdabiola.designsystem.component.KmtTopAppBar
-import com.mshdabiola.designsystem.drawable.KmtIcons
+import com.mshdabiola.designsystem.component.SamIconButton
+import com.mshdabiola.designsystem.component.SamTextField
+import com.mshdabiola.designsystem.component.SamTopAppBar
+import com.mshdabiola.designsystem.drawable.SamIcons
 import com.mshdabiola.detail.navigation.Detail
 import com.mshdabiola.model.testtag.DetailScreenTestTags
 import com.mshdabiola.ui.LocalNavAnimatedContentScope
 import com.mshdabiola.ui.LocalSharedTransitionScope
-import kmtemplate.feature.detail.generated.resources.Res
-import kmtemplate.feature.detail.generated.resources.detail_back_icon_content_description
-import kmtemplate.feature.detail.generated.resources.detail_content_placeholder
-import kmtemplate.feature.detail.generated.resources.detail_delete_icon_content_description
-import kmtemplate.feature.detail.generated.resources.detail_screen_title
-import kmtemplate.feature.detail.generated.resources.detail_title_placeholder
+import sample.feature.detail.generated.resources.Res
+import sample.feature.detail.generated.resources.detail_back_icon_content_description
+import sample.feature.detail.generated.resources.detail_content_placeholder
+import sample.feature.detail.generated.resources.detail_delete_icon_content_description
+import sample.feature.detail.generated.resources.detail_screen_title
+import sample.feature.detail.generated.resources.detail_title_placeholder
 import org.jetbrains.compose.resources.stringResource
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalSharedTransitionApi::class)
@@ -66,17 +66,17 @@ internal fun DetailScreen(
                 )
                 .testTag(DetailScreenTestTags.SCREEN_ROOT), // Apply testTag to the root
             topBar = {
-                KmtTopAppBar(
+                SamTopAppBar(
                     modifier = Modifier.testTag(DetailScreenTestTags.TOP_APP_BAR),
                     title = { Text(stringResource(Res.string.detail_screen_title)) },
                     actions = {
                         if (state.id > -1L) {
-                            KmtIconButton(
+                            SamIconButton(
                                 onClick = onDelete,
                                 modifier = Modifier.testTag(DetailScreenTestTags.DELETE_BUTTON),
                             ) {
                                 Icon(
-                                    imageVector = KmtIcons.Delete,
+                                    imageVector = SamIcons.Delete,
                                     contentDescription = stringResource(
                                         Res.string.detail_delete_icon_content_description,
                                     ),
@@ -85,12 +85,12 @@ internal fun DetailScreen(
                         }
                     },
                     navigationIcon = {
-                        KmtIconButton(
+                        SamIconButton(
                             onClick = onBack,
                             modifier = Modifier.testTag(DetailScreenTestTags.BACK_BUTTON),
                         ) {
                             Icon(
-                                imageVector = KmtIcons.ArrowBack,
+                                imageVector = SamIcons.ArrowBack,
                                 contentDescription = stringResource(
                                     Res.string.detail_back_icon_content_description,
                                 ),
@@ -106,7 +106,7 @@ internal fun DetailScreen(
                     .padding(paddingValues)
                     .fillMaxSize(),
             ) {
-                KmtTextField(
+                SamTextField(
                     modifier = Modifier
                         .fillMaxWidth()
                         .testTag(DetailScreenTestTags.TITLE_TEXT_FIELD),
@@ -115,7 +115,7 @@ internal fun DetailScreen(
                     maxNum = TextFieldLineLimits.SingleLine,
                     imeAction = ImeAction.Next,
                 )
-                KmtTextField(
+                SamTextField(
                     modifier = Modifier
                         .fillMaxWidth()
                         .weight(1f)

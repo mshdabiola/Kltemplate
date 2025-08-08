@@ -20,7 +20,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.mshdabiola.designsystem.DevicePreviews
-import com.mshdabiola.designsystem.theme.KmtTheme
+import com.mshdabiola.designsystem.theme.SamTheme
 import com.mshdabiola.model.DarkThemeConfig
 import com.mshdabiola.ui.SharedTransitionContainer // Import SharedTransitionContainer
 
@@ -39,7 +39,7 @@ class SettingScreenScreenshotTests {
     @DevicePreviews
     @Composable
     fun SettingScreen_Initial_Light_WithDrawer() {
-        KmtTheme(darkTheme = false) {
+        SamTheme(darkTheme = false) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 SharedTransitionContainer {
                     // As used in SettingScreenPreview
@@ -58,7 +58,7 @@ class SettingScreenScreenshotTests {
     @DevicePreviews
     @Composable
     fun SettingScreen_Initial_Dark_WithDrawer() {
-        KmtTheme(darkTheme = true) {
+        SamTheme(darkTheme = true) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 SharedTransitionContainer {
                     SettingScreen(
@@ -77,7 +77,7 @@ class SettingScreenScreenshotTests {
     @DevicePreviews
     @Composable
     fun SettingScreen_Initial_Light_NoDrawer() {
-        KmtTheme(darkTheme = false) {
+        SamTheme(darkTheme = false) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 SharedTransitionContainer {
                     SettingScreen(
@@ -95,7 +95,7 @@ class SettingScreenScreenshotTests {
     @DevicePreviews
     @Composable
     fun SettingScreen_Initial_Dark_NoDrawer() {
-        KmtTheme(darkTheme = true) {
+        SamTheme(darkTheme = true) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 SharedTransitionContainer {
                     SettingScreen(
@@ -116,7 +116,7 @@ class SettingScreenScreenshotTests {
     @DevicePreviews
     @Composable
     fun SettingScreen_Initial_Light_WithDrawer_SpecificSettingState() {
-        KmtTheme(darkTheme = false) {
+        SamTheme(darkTheme = false) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 SharedTransitionContainer {
                     SettingScreen(

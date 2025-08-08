@@ -20,7 +20,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.mshdabiola.designsystem.DevicePreviews
-import com.mshdabiola.designsystem.theme.KmtTheme
+import com.mshdabiola.designsystem.theme.SamTheme
 import com.mshdabiola.model.DarkThemeConfig
 import com.mshdabiola.setting.detailscreen.AppearanceScreen
 
@@ -32,8 +32,8 @@ class AppearanceScreenScreenshotTests {
     @DevicePreviews
     @Composable
     fun AppearanceScreenLight_DefaultContrast_SystemDark() {
-        // Using KmtTheme wraps MaterialTheme and provides your app's specific styling
-        KmtTheme(darkTheme = false) {
+        // Using SamTheme wraps MaterialTheme and provides your app's specific styling
+        SamTheme(darkTheme = false) {
             // Explicitly light theme for this test
             Surface(modifier = Modifier.fillMaxSize()) {
                 // Surface provides a background
@@ -53,7 +53,7 @@ class AppearanceScreenScreenshotTests {
     @DevicePreviews
     @Composable
     fun AppearanceScreenDark_DefaultContrast_SystemDark() {
-        KmtTheme(darkTheme = true) {
+        SamTheme(darkTheme = true) {
             // Explicitly dark theme
             Surface(modifier = Modifier.fillMaxSize()) {
                 AppearanceScreen(
@@ -72,7 +72,7 @@ class AppearanceScreenScreenshotTests {
     @DevicePreviews
     @Composable
     fun AppearanceScreenLight_LowContrast_LightModeSelected() {
-        KmtTheme(darkTheme = false) {
+        SamTheme(darkTheme = false) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 AppearanceScreen(
                     modifier = Modifier.fillMaxSize(),
@@ -90,7 +90,7 @@ class AppearanceScreenScreenshotTests {
     @DevicePreviews
     @Composable
     fun AppearanceScreenDark_HighContrast_DarkModeSelected() {
-        KmtTheme(darkTheme = true) {
+        SamTheme(darkTheme = true) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 AppearanceScreen(
                     modifier = Modifier.fillMaxSize(),
@@ -111,7 +111,7 @@ class AppearanceScreenScreenshotTests {
     @DevicePreviews
     @Composable
     fun AppearanceScreenLight_ContrastOption0Selected() {
-        KmtTheme(darkTheme = false) {
+        SamTheme(darkTheme = false) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 AppearanceScreen(
                     modifier = Modifier.fillMaxSize(),
@@ -129,7 +129,7 @@ class AppearanceScreenScreenshotTests {
     @DevicePreviews
     @Composable
     fun AppearanceScreenLight_ContrastOption2Selected() {
-        KmtTheme(darkTheme = false) {
+        SamTheme(darkTheme = false) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 AppearanceScreen(
                     modifier = Modifier.fillMaxSize(),

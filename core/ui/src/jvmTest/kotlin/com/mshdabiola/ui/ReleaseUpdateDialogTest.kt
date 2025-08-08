@@ -58,7 +58,7 @@ class ReleaseUpdateDialogTest {
             .assertTextEquals(testReleaseInfo.body)
         composeTestRule.onNodeWithTag(ReleaseUpdateTags.RELEASE_UPDATE_DIALOG_CONFIRM_BUTTON_TAG)
             .assertIsDisplayed()
-        // .assertTextEquals("Download") // KmtButton does not directly expose text for assertion
+        // .assertTextEquals("Download") // SamButton does not directly expose text for assertion
         composeTestRule.onNodeWithTag(ReleaseUpdateTags.RELEASE_UPDATE_DIALOG_DISMISS_BUTTON_TAG)
             .assertIsDisplayed()
         // .assertTextEquals("Cancel") // TextButton's child Text is not directly accessible by tag here

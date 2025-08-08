@@ -28,18 +28,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
-import com.mshdabiola.designsystem.component.KmtIconButton
-import com.mshdabiola.designsystem.component.KmtTopAppBar
-import com.mshdabiola.designsystem.drawable.KmtIcons
+import com.mshdabiola.designsystem.component.SamIconButton
+import com.mshdabiola.designsystem.component.SamTopAppBar
+import com.mshdabiola.designsystem.drawable.SamIcons
 import com.mshdabiola.model.DarkThemeConfig
 import com.mshdabiola.model.testtag.SettingDetailScreenTestTags
 import com.mshdabiola.setting.detailscreen.AboutScreen
 import com.mshdabiola.setting.detailscreen.AppearanceScreen
 import com.mshdabiola.setting.detailscreen.FaqScreen
 import com.mshdabiola.setting.detailscreen.LanguageScreen
-import kmtemplate.feature.setting.generated.resources.Res
-import kmtemplate.feature.setting.generated.resources.general
-import kmtemplate.feature.setting.generated.resources.support
+import sample.feature.setting.generated.resources.Res
+import sample.feature.setting.generated.resources.general
+import sample.feature.setting.generated.resources.support
 import org.jetbrains.compose.resources.stringArrayResource
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -63,17 +63,17 @@ internal fun SettingDetailScreen(
     Scaffold(
         modifier = modifier.testTag(SettingDetailScreenTestTags.SCREEN_ROOT),
         topBar = {
-            KmtTopAppBar(
+            SamTopAppBar(
                 modifier = Modifier.testTag(SettingDetailScreenTestTags.TOP_APP_BAR),
                 title = { Text(stringArray[settingNav.segment][settingNav.index]) },
                 navigationIcon = {
                     if (onBack != null) {
-                        KmtIconButton(
+                        SamIconButton(
                             onClick = onBack,
                             modifier = Modifier.testTag(SettingDetailScreenTestTags.BACK_ICON_BUTTON),
                         ) {
                             Icon(
-                                imageVector = KmtIcons.ArrowBack,
+                                imageVector = SamIcons.ArrowBack,
                                 contentDescription = "back",
                             )
                         }

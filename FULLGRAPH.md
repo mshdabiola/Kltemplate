@@ -1,4 +1,4 @@
-###  Kmtemplate Module Graph
+###  sample Module Graph
 
 ```mermaid
 %%{

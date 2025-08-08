@@ -271,7 +271,7 @@ val unspecified_scheme = ColorFamily(
 )
 
 @Composable
-fun KmtTheme(
+fun SamTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     contrast: Int = 0,
     disableDynamicTheming: Boolean = true,

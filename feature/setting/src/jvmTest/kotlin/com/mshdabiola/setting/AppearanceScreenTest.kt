@@ -27,7 +27,7 @@ import androidx.compose.ui.test.assertIsSelected
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
-import com.mshdabiola.designsystem.theme.KmtTheme
+import com.mshdabiola.designsystem.theme.SamTheme
 import com.mshdabiola.model.DarkThemeConfig
 import com.mshdabiola.model.testtag.AppearanceScreenTestTags
 import com.mshdabiola.setting.detailscreen.AppearanceScreen
@@ -49,7 +49,7 @@ class AppearanceScreenTest {
     @Test
     fun appearanceScreen_initialState_displaysCorrectly() {
         composeRule.setContent {
-            KmtTheme {
+            SamTheme {
                 AppearanceScreen(
                     settingsState = initialSettingsState,
                     onContrastChange = {},
@@ -126,7 +126,7 @@ class AppearanceScreenTest {
 
         composeRule.setContent {
             var currentSettings by remember { mutableStateOf(initialSettingsState) }
-            KmtTheme {
+            SamTheme {
                 AppearanceScreen(
                     settingsState = currentSettings,
                     onContrastChange = { newContrast ->
@@ -164,7 +164,7 @@ class AppearanceScreenTest {
 
         composeRule.setContent {
             var currentSettings by remember { mutableStateOf(initialSettingsState) }
-            KmtTheme {
+            SamTheme {
                 AppearanceScreen(
                     settingsState = currentSettings,
                     onContrastChange = {},
@@ -196,7 +196,7 @@ class AppearanceScreenTest {
 
         composeRule.setContent {
             var currentSettings by remember { mutableStateOf(initialSettingsState) }
-            KmtTheme {
+            SamTheme {
                 AppearanceScreen(
                     settingsState = currentSettings,
                     onContrastChange = {},

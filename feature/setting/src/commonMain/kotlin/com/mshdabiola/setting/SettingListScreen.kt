@@ -40,15 +40,15 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.mshdabiola.designsystem.component.KmtIconButton
-import com.mshdabiola.designsystem.component.KmtTopAppBar
-import com.mshdabiola.designsystem.drawable.KmtIcons
+import com.mshdabiola.designsystem.component.SamIconButton
+import com.mshdabiola.designsystem.component.SamTopAppBar
+import com.mshdabiola.designsystem.drawable.SamIcons
 import com.mshdabiola.model.testtag.SettingScreenListTestTags
-import kmtemplate.feature.setting.generated.resources.Res
-import kmtemplate.feature.setting.generated.resources.general
-import kmtemplate.feature.setting.generated.resources.screen_name
-import kmtemplate.feature.setting.generated.resources.segment
-import kmtemplate.feature.setting.generated.resources.support
+import sample.feature.setting.generated.resources.Res
+import sample.feature.setting.generated.resources.general
+import sample.feature.setting.generated.resources.screen_name
+import sample.feature.setting.generated.resources.segment
+import sample.feature.setting.generated.resources.support
 import org.jetbrains.compose.resources.stringArrayResource
 import org.jetbrains.compose.resources.stringResource
 
@@ -69,9 +69,9 @@ internal fun SettingListScreen(
     onSettingClick: (SettingNav) -> Unit = {},
 ) {
     val segmentArrayString = stringArrayResource(Res.array.segment)
-    val generalIcon = listOf(KmtIcons.Appearance, KmtIcons.Language)
+    val generalIcon = listOf(SamIcons.Appearance, SamIcons.Language)
     val generalArrayString = stringArrayResource(Res.array.general)
-    val supportIcon = listOf(KmtIcons.BugReport, KmtIcons.Faq, KmtIcons.About)
+    val supportIcon = listOf(SamIcons.BugReport, SamIcons.Faq, SamIcons.About)
     val supportArrayString = stringArrayResource(Res.array.support)
     val stringArray = listOf(generalArrayString, supportArrayString)
     val iconArray = listOf(generalIcon, supportIcon)
@@ -79,17 +79,17 @@ internal fun SettingListScreen(
     Scaffold(
         modifier = modifier.testTag(SettingScreenListTestTags.SCREEN_ROOT),
         topBar = {
-            KmtTopAppBar(
+            SamTopAppBar(
                 modifier = Modifier.testTag(SettingScreenListTestTags.TOP_APP_BAR),
                 title = { Text(stringResource(Res.string.screen_name)) },
                 navigationIcon = {
                     if (onDrawer != null) {
-                        KmtIconButton(
+                        SamIconButton(
                             onClick = onDrawer,
                             modifier = Modifier.testTag(SettingScreenListTestTags.MENU_ICON_BUTTON),
                         ) {
                             Icon(
-                                imageVector = KmtIcons.Menu,
+                                imageVector = SamIcons.Menu,
                                 contentDescription = "menu",
                             )
                         }

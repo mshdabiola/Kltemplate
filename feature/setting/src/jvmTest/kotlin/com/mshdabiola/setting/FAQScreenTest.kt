@@ -23,7 +23,7 @@ import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
-import com.mshdabiola.designsystem.theme.KmtTheme
+import com.mshdabiola.designsystem.theme.SamTheme
 import com.mshdabiola.model.testtag.FaqScreenTestTags
 import com.mshdabiola.setting.detailscreen.FaqItem
 import com.mshdabiola.setting.detailscreen.FaqScreen
@@ -80,7 +80,7 @@ class FAQScreenTest {
     @Test
     fun faqScreen_whenHasFaqs_displaysFaqList() {
         composeTestRule.setContent {
-            KmtTheme {
+            SamTheme {
                 FaqScreen() // FaqScreen uses its own internal list by default
             }
         }
@@ -106,7 +106,7 @@ class FAQScreenTest {
         // without refactoring FaqScreen.
         // If FaqScreen could take `questions: List<FaqItem>` as a parameter:
         // composeTestRule.setContent {
-        //     KmtTheme {
+        //     SamTheme {
         //         FaqScreen(questions = emptyList())
         //     }
         // }
@@ -131,7 +131,7 @@ class FAQScreenTest {
     @Test
     fun faqListItem_initialState_answerNotVisible_expandIconDisplayed() {
         composeTestRule.setContent {
-            KmtTheme {
+            SamTheme {
                 FaqScreen() // Uses its internal non-empty list
             }
         }
@@ -170,7 +170,7 @@ class FAQScreenTest {
     @Test
     fun faqListItem_clickToExpand_showsAnswer_updatesIcon() {
         composeTestRule.setContent {
-            KmtTheme {
+            SamTheme {
                 FaqScreen()
             }
         }
@@ -210,7 +210,7 @@ class FAQScreenTest {
     @Test
     fun faqListItem_clickTwiceToCollapse_hidesAnswer_updatesIcon() {
         composeTestRule.setContent {
-            KmtTheme {
+            SamTheme {
                 FaqScreen()
             }
         }
@@ -257,7 +257,7 @@ class FAQScreenTest {
         )
 
         composeTestRule.setContent {
-            KmtTheme {
+            SamTheme {
                 FaqScreen()
             }
         }

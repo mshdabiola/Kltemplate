@@ -35,7 +35,7 @@ internal class RealNetworkRepository(
         val name = "app-${platform.flavor.id}-${platform.buildType.id}-unsigned-signed.apk"
 
         return try {
-            val gitHubReleaseInfo = networkSource.getLatestKmtemplateRelease()
+            val gitHubReleaseInfo = networkSource.getLatestsampleRelease()
             val asset = gitHubReleaseInfo
                 .assets
                 ?.firstOrNull {

@@ -20,7 +20,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.mshdabiola.designsystem.DevicePreviews
-import com.mshdabiola.designsystem.theme.KmtTheme
+import com.mshdabiola.designsystem.theme.SamTheme
 
 class SettingListScreenScreenshotTests {
 
@@ -33,7 +33,7 @@ class SettingListScreenScreenshotTests {
     @DevicePreviews
     @Composable
     fun SettingListScreen_Light_WithDrawer() {
-        KmtTheme(darkTheme = false) {
+        SamTheme(darkTheme = false) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 SettingListScreen(
                     modifier = Modifier.fillMaxSize(),
@@ -48,7 +48,7 @@ class SettingListScreenScreenshotTests {
     @DevicePreviews
     @Composable
     fun SettingListScreen_Dark_WithDrawer() {
-        KmtTheme(darkTheme = true) {
+        SamTheme(darkTheme = true) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 SettingListScreen(
                     modifier = Modifier.fillMaxSize(),
@@ -63,7 +63,7 @@ class SettingListScreenScreenshotTests {
     @DevicePreviews
     @Composable
     fun SettingListScreen_Light_NoDrawer() {
-        KmtTheme(darkTheme = false) {
+        SamTheme(darkTheme = false) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 SettingListScreen(
                     modifier = Modifier.fillMaxSize(),
@@ -78,7 +78,7 @@ class SettingListScreenScreenshotTests {
     @DevicePreviews
     @Composable
     fun SettingListScreen_Dark_NoDrawer() {
-        KmtTheme(darkTheme = true) {
+        SamTheme(darkTheme = true) {
             Surface(modifier = Modifier.fillMaxSize()) {
                 SettingListScreen(
                     modifier = Modifier.fillMaxSize(),
@@ -95,7 +95,7 @@ class SettingListScreenScreenshotTests {
     // @DevicePreviews
     // @Composable
     // fun SettingListScreen_Empty_Light() {
-    //     KmtTheme(darkTheme = false) {
+    //     SamTheme(darkTheme = false) {
     //         Surface(modifier = Modifier.fillMaxSize()) {
     //             SettingListScreen(
     //                 modifier = Modifier.fillMaxSize(),

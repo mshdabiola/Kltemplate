@@ -37,27 +37,27 @@ class TestNetworkDataSource : NetworkDataSource {
         return "Fake Google Response"
     }
 
-    override suspend fun getLatestKmtemplateRelease(): GitHubReleaseInfo {
+    override suspend fun getLatestsampleRelease(): GitHubReleaseInfo {
         if (shouldThrowError) {
             throw Exception("Simulated network error")
         }
         return nextReleaseInfo ?: GitHubReleaseInfo(
-            htmlUrl = "https://github.com/mshdabiola/Kmtemplate/releases/tag/v0.0.1",
+            htmlUrl = "https://github.com/mshdabiola/sample/releases/tag/v0.0.1",
             tagName = "v0.0.1",
             releaseName = "Initial Release",
             assets = listOf(
                 Asset(
                     size = 123456,
-                    browserDownloadUrl = "https://github.com/mshdabiola/Kmtemplate/" +
+                    browserDownloadUrl = "https://github.com/mshdabiola/sample/" +
                         "releases/download/v0.0.1/app-debug-release-unsigned-signed.apk",
                 ),
                 Asset(
                     size = 123456,
-                    browserDownloadUrl = "https://github.com/mshdabiola/Kmtemplate/" +
+                    browserDownloadUrl = "https://github.com/mshdabiola/sample/" +
                         "releases/download/v0.0.1/app-release-release-unsigned-signed.apk",
                 ),
             ),
-            body = "This is the initial release of Kmtemplate.",
+            body = "This is the initial release of sample.",
         )
     }
 }

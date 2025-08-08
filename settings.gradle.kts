@@ -38,7 +38,7 @@ dependencyResolutionManagement {
         maven(url = "https://maven.pkg.jetbrains.space/kotlin/p/wasm/experimental")
     }
 }
-rootProject.name = "Kmtemplate"
+rootProject.name = "sample"
 include(":core:database")
 include(":core:designsystem")
 include(":core:model")
