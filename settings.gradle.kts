@@ -9,7 +9,6 @@ pluginManagement {
     }
 }
 
-// settings.gradle.kts
 plugins {
     id("org.gradle.toolchains.foojay-resolver") version "1.0.0"
 }
@@ -38,7 +37,7 @@ dependencyResolutionManagement {
         maven(url = "https://maven.pkg.jetbrains.space/kotlin/p/wasm/experimental")
     }
 }
-rootProject.name = "sample"
+rootProject.name = "Kltemplate"
 include(":core:database")
 include(":core:model")
 include(":core:network")
