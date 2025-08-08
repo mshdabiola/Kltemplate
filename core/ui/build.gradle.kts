@@ -25,7 +25,23 @@ import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 plugins {
     id("mshdabiola.android.library")
     id("mshdabiola.android.library.compose")
+    id("mshdabiola.android.library.publish")
+
 }
+
+
+mavenPublishing {
+    // Define coordinates for the published artifact
+    coordinates(
+        artifactId = "ui",
+    )
+    // Configure POM metadata for the published artifact
+    pom {
+        name.set("sample ui")
+        description.set("ui")
+    }
+}
+
 
 android {
     defaultConfig {

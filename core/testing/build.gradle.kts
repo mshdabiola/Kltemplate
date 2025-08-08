@@ -20,7 +20,23 @@ import org.jetbrains.compose.ExperimentalComposeLibrary
  */
 plugins {
     id("mshdabiola.android.library")
+    id("mshdabiola.android.library.publish")
+
 }
+
+
+mavenPublishing {
+    // Define coordinates for the published artifact
+    coordinates(
+        artifactId = "testing",
+    )
+    // Configure POM metadata for the published artifact
+    pom {
+        name.set("sample testing")
+        description.set("testing")
+    }
+}
+
 
 android {
     namespace = "com.mshdabiola.testing"

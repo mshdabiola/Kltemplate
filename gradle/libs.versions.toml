@@ -31,6 +31,8 @@ sqlite = "2.6.0-beta01"
 truth = "1.4.4"
 versionCode = "1"
 versionName = "0.0.1"
+groupId ="io.github.mshdabiola"
+vanniktech-gradle="0.34.0"
 
 
 [libraries]
@@ -95,6 +97,7 @@ slf4j-simple = { module = "org.slf4j:slf4j-simple", version.ref = "slf4jSimple" 
 spotless-gradlePlugin = { group = "com.diffplug.spotless", name = "spotless-plugin-gradle", version.ref = "spotless" }
 sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sqlite" }
 truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
+vanniktech-gradlePlugin = { module = "com.vanniktech:gradle-maven-publish-plugin", version.ref = "vanniktech-gradle" }
 
 
 [plugins]
@@ -114,3 +117,4 @@ ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 powerAssert = { id = "org.jetbrains.kotlin.plugin.power-assert", version.ref = "kotlin" }
 room = { id = "androidx.room", version.ref = "room" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+vanniktech = { id = "com.vanniktech.maven.publish", version.ref = "vanniktech-gradle" }
