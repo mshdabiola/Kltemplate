@@ -19,3 +19,24 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+#https://issuetracker.google.com/issues/265188224
+
+-keep,allowshrinking class * extends androidx.compose.ui.node.ModifierNodeElement {
+
+}
+-dontwarn com.google.firebase.perf.network.FirebasePerfUrlConnection
+-dontwarn javax.annotation.processing.AbstractProcessor
+-dontwarn javax.annotation.processing.SupportedOptions
+
+-keepattributes Signature,RuntimeVisibleAnnotations,AnnotationDefault
+-keepclassmembers class * {
+    @kotlinx.serialization.SerialName *;
+}
+-keepclassmembers class * {
+    @kotlinx.serialization.Serializable *;
+}
+
+-keepclassmembers enum * {
+    @kotlinx.serialization.SerialName *;
+}
