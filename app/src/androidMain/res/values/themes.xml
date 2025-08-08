@@ -22,15 +22,5 @@
     <!-- The final theme we use -->
     <style name="Theme.Sk" parent="NightAdjusted.Theme.Sk" />
 
-    <style name="NightAdjusted.Theme.Splash" parent="Theme.SplashScreen">
-        <item name="android:windowLightStatusBar">true</item>
-        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
-    </style>
-
-    <style name="Theme.Sk.Splash" parent="NightAdjusted.Theme.Splash">
-        <item name="windowSplashScreenBackground">@color/primary</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
-        <item name="postSplashScreenTheme">@style/Theme.Sk</item>
-    </style>
 
 </resources>

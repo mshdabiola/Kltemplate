@@ -20,7 +20,6 @@ import org.jetbrains.compose.ExperimentalComposeLibrary
  */
 plugins {
     id("mshdabiola.android.library")
-    id("mshdabiola.android.library.compose")
 }
 
 android {
@@ -40,14 +39,14 @@ kotlin {
                 api(libs.koin.test)
                 api(libs.kermit.test)
             }
-
-         jvmMain.dependencies {
-             api(libs.koin.test.junit)
-
-             api(compose.desktop.currentOs)
-
-                api(compose.desktop.uiTestJUnit4)
-            }
+//
+//         jvmMain.dependencies {
+//             api(libs.koin.test.junit)
+//
+//             api(compose.desktop.currentOs)
+//
+//                api(compose.desktop.uiTestJUnit4)
+//            }
 
 
     }

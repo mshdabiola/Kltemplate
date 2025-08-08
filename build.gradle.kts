@@ -13,9 +13,7 @@ plugins {
     alias(libs.plugins.powerAssert) apply false
     alias(libs.plugins.jetbrainsCompose) apply false
     alias(libs.plugins.compose.compiler) apply false
-    alias(libs.plugins.screenshot) apply false
     alias(libs.plugins.kover) apply false
-    alias(libs.plugins.ktlint) apply false
     alias(libs.plugins.detekt) apply false
     alias(libs.plugins.spotless)
     id("mshdabiola.ci.task")

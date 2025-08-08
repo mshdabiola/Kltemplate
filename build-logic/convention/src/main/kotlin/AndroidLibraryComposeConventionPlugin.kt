@@ -28,28 +28,11 @@ class AndroidLibraryComposeConventionPlugin : Plugin<Project> {
             pluginManager.apply("com.android.library")
             pluginManager.apply("org.jetbrains.compose")
             pluginManager.apply("org.jetbrains.kotlin.plugin.compose")
-            pluginManager.apply("com.android.compose.screenshot")
 
             extensions.configure<LibraryExtension> {
                 configureAndroidCompose(this)
-
-                experimentalProperties["android.experimental.enableScreenshotTest"] = true
             }
 
-            dependencies {
-//                add("screenshotTestImplementation", project(":core:designsystem"))
-//                add("screenshotTestImplementation", project(":core:ui"))
-//                add(
-//                    "screenshotTestImplementation",
-//                    libs.findLibrary("screenshot-validation-api").get(),
-//                )
-//                add(
-//                    "screenshotTestImplementation",
-//                    libs.findLibrary("androidx.compose.ui.tooling").get(),
-//                )
-//                add("screenshotTestImplementation", project(":core:model"))
-//                add("screenshotTestImplementation", project(":core:testing"))
-            }
         }
     }
 }

@@ -36,7 +36,6 @@ import co.touchlab.kermit.koin.KermitKoinLogger
 import co.touchlab.kermit.koin.kermitLoggerModule
 import co.touchlab.kermit.loggerConfigInit
 import co.touchlab.kermit.platformLogWriter
-import com.bugsnag.Bugsnag
 import com.hobit.sample.app.generated.resources.Res
 import com.hobit.sample.app.generated.resources.desktopicon
 import com.hobit.sample.di.appModule

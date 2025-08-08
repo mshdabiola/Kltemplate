@@ -37,7 +37,6 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtimeCompose)
-    implementation(libs.androidx.tracing.ktx)
     implementation(libs.androidx.window.core)
 
     implementation(libs.kermit.koin)
@@ -70,7 +69,6 @@ kotlin {
 
 
         jvmMain.dependencies {
-            implementation(libs.bugsnag)
             implementation(libs.kermit.koin)
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutines.swing)
