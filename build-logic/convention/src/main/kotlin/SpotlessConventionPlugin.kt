@@ -17,8 +17,6 @@ import com.diffplug.gradle.spotless.SpotlessExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
-import org.gradle.kotlin.dsl.dependencies
-import org.jlleitschuh.gradle.ktlint.KtlintExtension
 
 class SpotlessConventionPlugin : Plugin<Project> {
 
@@ -26,13 +24,10 @@ class SpotlessConventionPlugin : Plugin<Project> {
         with(target) {
             with(pluginManager) {
                 apply("com.diffplug.spotless")
-                apply("org.jlleitschuh.gradle.ktlint")
                 apply("mshdabiola.detekt")
             }
 
-            extensions.configure<KtlintExtension> {
-                debug.set(true)
-            }
+
 
             extensions.configure<SpotlessExtension> {
                 kotlin {
@@ -59,14 +54,11 @@ class SpotlessConventionPlugin : Plugin<Project> {
                 }
             }
 
-            dependencies {
-                add("ktlint", project(":ktlint"))
-            }
 
-            tasks.register("lintCheck") {
-                dependsOn(tasks.named("ktlintCheck"))
-                dependsOn(tasks.named("detekt"))
-            }
+//            tasks.register("lintCheck") {
+//                dependsOn(tasks.named("ktlintCheck"))
+//                dependsOn(tasks.named("detekt"))
+//            }
         }
     }
 }

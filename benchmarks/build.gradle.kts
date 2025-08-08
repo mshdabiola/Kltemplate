@@ -15,7 +15,6 @@
  *
  * SPDX-License-Identifier: AGPL-3.0-only
  */
-import com.mshdabiola.app.BuildType
 import com.mshdabiola.app.configureFlavors
 
 @Suppress("DSL_SCOPE_VIOLATION")

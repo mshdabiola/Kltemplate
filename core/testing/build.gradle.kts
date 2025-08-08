@@ -34,12 +34,10 @@ kotlin {
         commonMain.dependencies {
                 api(kotlin("test"))
                 implementation(projects.core.model)
-            implementation(projects.core.analytics)
                 api(projects.core.data)
                 api(projects.core.designsystem)
 
                 api(libs.kotlinx.coroutines.test)
-                api(libs.turbine)
                 api(libs.koin.test)
                 api(libs.kermit.test)
             }

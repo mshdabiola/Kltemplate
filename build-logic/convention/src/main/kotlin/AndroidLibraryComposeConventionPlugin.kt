@@ -37,18 +37,18 @@ class AndroidLibraryComposeConventionPlugin : Plugin<Project> {
             }
 
             dependencies {
-                add("screenshotTestImplementation", project(":core:designsystem"))
-                add("screenshotTestImplementation", project(":core:ui"))
-                add(
-                    "screenshotTestImplementation",
-                    libs.findLibrary("screenshot-validation-api").get(),
-                )
-                add(
-                    "screenshotTestImplementation",
-                    libs.findLibrary("androidx.compose.ui.tooling").get(),
-                )
-                add("screenshotTestImplementation", project(":core:model"))
-                add("screenshotTestImplementation", project(":core:testing"))
+//                add("screenshotTestImplementation", project(":core:designsystem"))
+//                add("screenshotTestImplementation", project(":core:ui"))
+//                add(
+//                    "screenshotTestImplementation",
+//                    libs.findLibrary("screenshot-validation-api").get(),
+//                )
+//                add(
+//                    "screenshotTestImplementation",
+//                    libs.findLibrary("androidx.compose.ui.tooling").get(),
+//                )
+//                add("screenshotTestImplementation", project(":core:model"))
+//                add("screenshotTestImplementation", project(":core:testing"))
             }
         }
     }

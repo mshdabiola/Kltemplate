@@ -67,16 +67,12 @@ dependencies {
     compileOnly(libs.android.tools.common)
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.android.gradlePlugin)
-    compileOnly(libs.firebase.crashlytics.gradlePlugin)
-    compileOnly(libs.firebase.performance.gradlePlugin)
     implementation(libs.truth)
     compileOnly(libs.ksp.gradlePlugin)
     compileOnly(libs.kotlin.powerAssert)
     compileOnly(libs.compose.gradlePlugin)
     compileOnly(libs.kover.gradlePlugin)
-    compileOnly(libs.compose.hot.gradlePlugin)
     compileOnly(libs.spotless.gradlePlugin)
-    compileOnly(libs.jlleitschuh.gradlePlugin)
     compileOnly(libs.detekt.gradlePlugin)
 
 //    compileOnly("org.jlleitschuh.gradle:ktlint-gradle:12.3.0")
@@ -95,14 +91,7 @@ gradlePlugin {
             id = "mshdabiola.android.application.compose"
             implementationClass = "AndroidApplicationComposeConventionPlugin"
         }
-        register("androidApplicationFlavor") {
-            id = "mshdabiola.android.application.flavor"
-            implementationClass = "AndroidApplicationFlavorsConventionPlugin"
-        }
-        register("androidApplicationFirebase") {
-            id = "mshdabiola.android.application.firebase"
-            implementationClass = "AndroidApplicationFirebaseConventionPlugin"
-        }
+
 
         register("androidApplication") {
             id = "mshdabiola.android.application"
@@ -118,10 +107,7 @@ gradlePlugin {
             id = "mshdabiola.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
         }
-        register("androidFeature") {
-            id = "mshdabiola.android.feature"
-            implementationClass = "AndroidFeatureConventionPlugin"
-        }
+
 
         register("androidTest") {
             id = "mshdabiola.android.test"
@@ -134,10 +120,6 @@ gradlePlugin {
             implementationClass = "AndroidLintConventionPlugin"
         }
 
-        register("jvmLibrary") {
-            id = "mshdabiola.jvm.library"
-            implementationClass = "JvmLibraryConventionPlugin"
-        }
 
 
         register("spotless") {

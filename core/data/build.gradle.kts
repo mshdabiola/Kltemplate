@@ -54,7 +54,6 @@ kotlin {
 
     sourceSets {
             commonMain.dependencies {
-                implementation(projects.core.analytics)
                 implementation(projects.core.model)
                 implementation(projects.core.database)
                 implementation(projects.core.datastore)

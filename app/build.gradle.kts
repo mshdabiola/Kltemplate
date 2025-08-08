@@ -13,17 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import com.mshdabiola.app.BuildType
 
 plugins {
     id("mshdabiola.android.application")
     id("mshdabiola.android.application.compose")
-    id("mshdabiola.android.application.flavor")
     alias(libs.plugins.jetbrainsCompose)
-    alias(libs.plugins.conveyor)
-    alias(libs.plugins.baselineprofile)
-    alias(libs.plugins.composehot)
-    alias(libs.plugins.screenshot)
 
 }
 
@@ -31,10 +25,10 @@ group = "com.hobit.sample"
 version = libs.versions.versionName.get()
 
 dependencies {
-    linuxAmd64(compose.desktop.linux_x64)
-    macAmd64(compose.desktop.macos_x64)
-    macAarch64(compose.desktop.macos_arm64)
-    windowsAmd64(compose.desktop.windows_x64)
+//    linuxAmd64(compose.desktop.linux_x64)
+//    macAmd64(compose.desktop.macos_x64)
+//    macAarch64(compose.desktop.macos_arm64)
+//    windowsAmd64(compose.desktop.windows_x64)
 
     implementation(libs.koin.android)
 
@@ -42,33 +36,11 @@ dependencies {
 
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.core.splashscreen)
     implementation(libs.androidx.lifecycle.runtimeCompose)
-    implementation(libs.androidx.navigation.compose)
-    implementation(libs.androidx.profileinstaller)
     implementation(libs.androidx.tracing.ktx)
     implementation(libs.androidx.window.core)
-    implementation(libs.kotlinx.coroutines.guava)
 
-    baselineProfile(projects.benchmarks)
     implementation(libs.kermit.koin)
-
-
-    googlePlayImplementation(platform(libs.firebase.bom))
-    googlePlayImplementation(libs.firebase.analytics)
-    googlePlayImplementation(libs.firebase.performance)
-    googlePlayImplementation(libs.firebase.crashlytics)
-
-    googlePlayImplementation(libs.firebase.cloud.messaging)
-    googlePlayImplementation(libs.firebase.remoteconfig)
-    googlePlayImplementation(libs.firebase.message)
-    googlePlayImplementation(libs.firebase.auth)
-
-
-    implementation(libs.acra.mail)
-
-    screenshotTestImplementation(libs.screenshot.validation.api)
-    screenshotTestImplementation(libs.androidx.compose.ui.tooling)
 
 }
 
@@ -84,23 +56,9 @@ kotlin {
 
             implementation(libs.koin.core)
 
-            implementation(projects.core.designsystem)
-            implementation(projects.core.data)
-            implementation(projects.core.ui)
-            implementation(projects.core.model)
-            implementation(projects.core.analytics)
-
-
-            implementation(projects.feature.main)
-            implementation(projects.feature.detail)
-            implementation(projects.feature.setting)
-
             // Logger
             implementation(libs.kermit)
 
-            implementation(libs.androidx.compose.material3.adaptive)
-            implementation(libs.androidx.compose.material3.adaptive.layout)
-            implementation(libs.androidx.compose.material3.adaptive.navigation)
             implementation(compose.components.resources)
 
 
@@ -138,38 +96,6 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
-        }
-    }
-
-    buildTypes {
-        debug {
-            applicationIdSuffix = BuildType.DEBUG.applicationIdSuffix
-        }
-        val release = getByName("release") {
-            isMinifyEnabled = true
-            applicationIdSuffix = BuildType.RELEASE.applicationIdSuffix
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro",
-            )
-
-            // To publish on the Play store a private signing key is required, but to allow anyone
-            // who clones the code to sign and run the release variant, use the debug signing key.
-            // TODO: Abstract the signing configuration to a separate file to avoid hardcoding this.
-            // signingConfig = signingConfigs.getByName("debug")
-            // Ensure Baseline Profile is fresh for release builds.
-            baselineProfile.automaticGenerationDuringBuild = true
-        }
-        create("benchmark") {
-            // Enable all the optimizations from release build through initWith(release).
-            initWith(release)
-            matchingFallbacks.add("release")
-            // Debug key signing is available to everyone.
-            signingConfig = signingConfigs.getByName("debug")
-            // Only use benchmark proguard rules
-            proguardFiles("benchmark-rules.pro")
-            isMinifyEnabled = true
-            applicationIdSuffix = BuildType.BENCHMARK.applicationIdSuffix
         }
     }
 
@@ -215,14 +141,8 @@ configurations.configureEach {
 }
 
 
-baselineProfile {
-    // Don't build on every iteration of a full assemble.
-    // Instead enable generation directly for the release build variant.
-    automaticGenerationDuringBuild = false
-}
-
 dependencyGuard {
-    configuration("fossReliantReleaseRuntimeClasspath")
-    configuration("googlePlayDebugRuntimeClasspath")
+    configuration("androidDebugCompileClasspath")
+
 
 }
