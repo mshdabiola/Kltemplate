@@ -42,33 +42,31 @@ fun NoteCard(
     noteUiState: Note,
     onClick: (Long) -> Unit,
 ) {
-
-        Card(
-            modifier = modifier
-                .testTag(NoteCardTestTags.ROOT) // Add test tag to the root element
-                .fillMaxWidth()
-                .clickable { onClick(noteUiState.id) },
-            elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
-            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
+    Card(
+        modifier = modifier
+            .testTag(NoteCardTestTags.ROOT) // Add test tag to the root element
+            .fillMaxWidth()
+            .clickable { onClick(noteUiState.id) },
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp).fillMaxWidth(),
         ) {
-            Column(
-                modifier = Modifier.padding(16.dp).fillMaxWidth(),
-            ) {
-                Text(
-                    text = noteUiState.title,
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.SemiBold,
-                    modifier = Modifier
-                        .testTag(NoteCardTestTags.TITLE),
-                )
-                Spacer(modifier = Modifier.width(8.dp))
-                Text(
-                    text = noteUiState.content,
-                    modifier = Modifier.testTag(NoteCardTestTags.CONTENT), // Add test tag to the content
-                )
-            }
+            Text(
+                text = noteUiState.title,
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.SemiBold,
+                modifier = Modifier
+                    .testTag(NoteCardTestTags.TITLE),
+            )
+            Spacer(modifier = Modifier.width(8.dp))
+            Text(
+                text = noteUiState.content,
+                modifier = Modifier.testTag(NoteCardTestTags.CONTENT), // Add test tag to the content
+            )
         }
-
+    }
 }
 
 @OptIn(ExperimentalSharedTransitionApi::class)
@@ -78,9 +76,8 @@ fun NoteCardPreview() {
     val noteUiState =
         Note(id = 1L, title = "Sample Note", content = "This is a sample note content.")
 
-        NoteCard(
-            noteUiState = noteUiState,
-            onClick = {},
-        )
-
+    NoteCard(
+        noteUiState = noteUiState,
+        onClick = {},
+    )
 }

@@ -15,13 +15,7 @@
  */
 package com.hobit.sample
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
@@ -40,7 +34,6 @@ import com.hobit.sample.app.generated.resources.Res
 import com.hobit.sample.app.generated.resources.desktopicon
 import com.hobit.sample.di.appModule
 import com.mshdabiola.model.Platform
-import kotlinx.coroutines.delay
 import org.jetbrains.compose.resources.painterResource
 import org.koin.core.context.GlobalContext.startKoin
 import org.koin.dsl.bind
@@ -67,7 +60,6 @@ fun mainApp() {
 }
 
 fun main() {
-
     val logger =
         Logger(
             loggerConfigInit(
@@ -91,7 +83,6 @@ fun main() {
         )
     }
     mainApp()
-
 }
 
 private fun getPlatform(): Platform.Desktop {

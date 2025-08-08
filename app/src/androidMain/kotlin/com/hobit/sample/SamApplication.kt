@@ -31,11 +31,10 @@ class SamApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-
         val logger =
             Logger(
                 loggerConfigInit(
-                    minSeverity =  Severity.Verbose,
+                    minSeverity = Severity.Verbose,
 
                     logWriters = arrayOf(platformLogWriter(DefaultFormatter)),
                 ),
@@ -51,7 +50,5 @@ class SamApplication : Application() {
                 kermitLoggerModule(logger),
             )
         }
-
     }
-
 }

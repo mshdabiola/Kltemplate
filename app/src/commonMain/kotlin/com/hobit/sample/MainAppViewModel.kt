@@ -18,10 +18,10 @@ package com.hobit.sample
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import co.touchlab.kermit.Logger
-import com.mshdabiola.data.repository.NetworkRepository
-import com.mshdabiola.data.repository.UserDataRepository
 import com.hobit.sample.MainActivityUiState.Loading
 import com.hobit.sample.MainActivityUiState.Success
+import com.mshdabiola.data.repository.NetworkRepository
+import com.mshdabiola.data.repository.UserDataRepository
 import com.mshdabiola.model.ReleaseInfo
 import com.mshdabiola.model.UserSettings
 import kotlinx.coroutines.Deferred

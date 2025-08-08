@@ -27,8 +27,6 @@ class SpotlessConventionPlugin : Plugin<Project> {
                 apply("mshdabiola.detekt")
             }
 
-
-
             extensions.configure<SpotlessExtension> {
                 kotlin {
                     target("**/*.kt")
@@ -53,7 +51,6 @@ class SpotlessConventionPlugin : Plugin<Project> {
                         .updateYearWithLatest(true)
                 }
             }
-
 
 //            tasks.register("lintCheck") {
 //                dependsOn(tasks.named("ktlintCheck"))

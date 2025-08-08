@@ -15,12 +15,9 @@
  */
 import com.android.build.gradle.LibraryExtension
 import com.mshdabiola.app.configureAndroidCompose
-import com.mshdabiola.app.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
-import org.gradle.kotlin.dsl.dependencies
-import org.gradle.kotlin.dsl.project
 
 class AndroidLibraryComposeConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
@@ -32,7 +29,6 @@ class AndroidLibraryComposeConventionPlugin : Plugin<Project> {
             extensions.configure<LibraryExtension> {
                 configureAndroidCompose(this)
             }
-
         }
     }
 }

@@ -23,7 +23,7 @@ import androidx.compose.ui.Modifier
 
 @Composable
 fun SamApp() {
-    Box(modifier = Modifier.fillMaxSize()){
+    Box(modifier = Modifier.fillMaxSize()) {
         Text("Texting")
     }
 }
