@@ -31,3 +31,5 @@ https://randombits.dev/articles/android/fdroid
 
 
  ./gradlew renameProjectArtifacts -PnewPackageName=com.abiola.notepad -PnewPrefix=NtP
+publishToMavenCentral - Publishes to Maven Central
+publishToMavenLocal - Publ
