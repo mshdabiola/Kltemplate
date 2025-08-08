@@ -131,7 +131,7 @@ jobs:
 
 
       - name: Check lint
-        run: ./gradlew lintFossReliantRelease
+        run: ./gradlew lintRelease
 
       - uses: github/codeql-action/upload-sarif@v3.29.2
         if: success() || failure()
