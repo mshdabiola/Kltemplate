@@ -37,11 +37,9 @@ import co.touchlab.kermit.koin.kermitLoggerModule
 import co.touchlab.kermit.loggerConfigInit
 import co.touchlab.kermit.platformLogWriter
 import com.bugsnag.Bugsnag
-import com.mshdabiola.designsystem.strings.SamStrings
 import com.hobit.sample.app.generated.resources.Res
 import com.hobit.sample.app.generated.resources.desktopicon
 import com.hobit.sample.di.appModule
-import com.hobit.sample.ui.SplashScreen
 import com.mshdabiola.model.Platform
 import kotlinx.coroutines.delay
 import org.jetbrains.compose.resources.painterResource
@@ -60,33 +58,22 @@ fun mainApp() {
 
         Window(
             onCloseRequest = ::exitApplication,
-            title = "${SamStrings.brand} v${SamStrings.version}",
+            title = "Sample",
             icon = painterResource(Res.drawable.desktopicon),
             state = windowState,
         ) {
-            val show = remember { mutableStateOf(true) }
-            LaunchedEffect(Unit) {
-                delay(2000)
-                show.value = false
-            }
-            Box(Modifier.fillMaxSize()) {
-                SamApp()
-                if (show.value) {
-                    SplashScreen()
-                }
-            }
+            SamApp()
         }
     }
 }
 
 fun main() {
-    val bugsnag = Bugsnag("5af3586b6547f3e4844773daedaee4f5")
 
     val logger =
         Logger(
             loggerConfigInit(
                 minSeverity = Severity.Verbose,
-                logWriters = arrayOf(platformLogWriter(DefaultFormatter), CustomLogWriter()),
+                logWriters = arrayOf(platformLogWriter(DefaultFormatter)),
             ),
         )
     val applicationModule = module {
@@ -104,12 +91,8 @@ fun main() {
             applicationModule,
         )
     }
-//    bugsnag.setAppVersion(SamStrings.version)
-    try {
-        mainApp()
-    } catch (e: Exception) {
-        bugsnag.notify(e)
-    }
+    mainApp()
+
 }
 
 private fun getPlatform(): Platform.Desktop {

@@ -42,16 +42,10 @@ fun NoteCard(
     noteUiState: Note,
     onClick: (Long) -> Unit,
 ) {
-    val sharedTransitionScope = LocalSharedTransitionScope.current
-    val animatedContentScope = LocalNavAnimatedContentScope.current
-    with(sharedTransitionScope) {
+
         Card(
             modifier = modifier
                 .testTag(NoteCardTestTags.ROOT) // Add test tag to the root element
-                .sharedBounds(
-                    sharedContentState = rememberSharedContentState("note_${noteUiState.id}"),
-                    animatedVisibilityScope = animatedContentScope,
-                )
                 .fillMaxWidth()
                 .clickable { onClick(noteUiState.id) },
             elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
@@ -74,7 +68,7 @@ fun NoteCard(
                 )
             }
         }
-    }
+
 }
 
 @OptIn(ExperimentalSharedTransitionApi::class)
@@ -84,10 +78,9 @@ fun NoteCardPreview() {
     val noteUiState =
         Note(id = 1L, title = "Sample Note", content = "This is a sample note content.")
 
-    SharedTransitionContainer {
         NoteCard(
             noteUiState = noteUiState,
             onClick = {},
         )
-    }
+
 }

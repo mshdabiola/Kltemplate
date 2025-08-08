@@ -13,15 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.mshdabiola.ui
+package com.hobit.sample
 
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.semantics.SemanticsPropertyReceiver
-import androidx.compose.ui.semantics.semantics
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-actual fun Modifier.semanticsCommon(
-    mergeDescendants: Boolean,
-    properties: SemanticsPropertyReceiver.() -> Unit,
-): Modifier {
-    return this.semantics(mergeDescendants, properties)
+class MainActivity : ComponentActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        setContent {
+            SamApp()
+        }
+    }
 }
