@@ -39,10 +39,9 @@ class NoteCardTest {
     @Test
     fun noteCard_displaysTitleAndContent() {
         composeTestRule.setContent {
-            SharedTransitionContainer {
                 // Required by sharedBounds
                 NoteCard(noteUiState = testNote, onClick = {})
-            }
+
         }
 
         // Verify title is displayed with correct text using test tag
@@ -66,7 +65,6 @@ class NoteCardTest {
         val expectedNoteId = testNote.id
 
         composeTestRule.setContent {
-            SharedTransitionContainer {
                 // Required by sharedBounds
                 NoteCard(
                     noteUiState = testNote,
@@ -74,7 +72,7 @@ class NoteCardTest {
                         clickedNoteId = id
                     },
                 )
-            }
+
         }
 
         // Perform click on the root element of the NoteCard
@@ -88,10 +86,9 @@ class NoteCardTest {
     @Test
     fun noteCard_rootElementExists() {
         composeTestRule.setContent {
-            SharedTransitionContainer {
                 // Required by sharedBounds
                 NoteCard(noteUiState = testNote, onClick = {})
-            }
+
         }
         // Verify the root element (ListItem) is present using its test tag
         composeTestRule.onNodeWithTag(NoteCardTestTags.ROOT).assertExists()

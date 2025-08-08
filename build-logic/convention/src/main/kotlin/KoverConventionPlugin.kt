@@ -24,14 +24,8 @@ class KoverConventionPlugin : Plugin<Project> {
             val koverPlugin = "org.jetbrains.kotlinx.kover"
             pluginManager.apply(koverPlugin)
             val exclude = listOf(
-                "app",
-                "feature",
                 "core",
-                "benchmarks",
-                "analytics",
                 "model",
-                "ktlint",
-                "designsystem",
                 "testing",
             )
 
