@@ -136,7 +136,7 @@ jobs:
       - uses: github/codeql-action/upload-sarif@v3.29.2
         if: success() || failure()
         with:
-          sarif_file: app/build/reports/lint-results-fossReliantRelease.sarif
+          sarif_file: app/build/reports/lint-results-release.sarif
           category: lint
 
       - name: Upload lint reports (HTML)
