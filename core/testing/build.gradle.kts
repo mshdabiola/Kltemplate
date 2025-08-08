@@ -35,7 +35,6 @@ kotlin {
                 api(kotlin("test"))
                 implementation(projects.core.model)
                 api(projects.core.data)
-                api(projects.core.designsystem)
 
                 api(libs.kotlinx.coroutines.test)
                 api(libs.koin.test)

@@ -40,7 +40,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "sample"
 include(":core:database")
-include(":core:designsystem")
 include(":core:model")
 include(":core:network")
 include(":core:data")

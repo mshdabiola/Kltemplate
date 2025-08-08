@@ -29,7 +29,6 @@ import co.touchlab.kermit.Severity
 import co.touchlab.kermit.loggerConfigInit
 import co.touchlab.kermit.platformLogWriter
 import com.hobit.sample.di.appModule
-import com.hobit.sample.ui.SamApp
 import com.hobit.sample.ui.SplashScreen
 import com.mshdabiola.model.Platform
 import kotlinx.browser.document

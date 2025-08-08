@@ -1,7 +1,0 @@
-
-
-[*.{kt,kts}]
-ktlint_sample_prefer-method-name=disabled
-
-[*.{kt,kts}]
-ktlint_sample_prefer-receiver-name=disabled

@@ -52,8 +52,32 @@ kotlin {
     }
     sourceSets {
          commonMain.dependencies {
-                implementation(projects.core.designsystem)
              implementation(projects.core.model)
+             api(compose.runtime)
+             api(compose.foundation)
+             api(compose.ui)
+             api(compose.materialIconsExtended)
+             api(compose.components.resources)
+             api(compose.material3AdaptiveNavigationSuite)
+             api(compose.components.uiToolingPreview)
+//                api(compose.material3)
+
+
+             api(libs.androidx.navigation.compose.get())
+             api(libs.kotlinx.collection.immutable)
+             api(libs.androidx.lifecycle.viewmodelCompose)
+             api(libs.androidx.lifecycle.runtimeCompose)
+             api(libs.material3)
+
+
+             api(libs.koin.compose)
+             api(libs.koin.composeVM)
+
+             api(libs.coil.kt)
+             api(libs.coil.kt.compose)
+             api(libs.coil.kt.svg)
+             api(libs.coil.kt.network)
+             api(compose.components.resources)
             }
 
         jvmMain.dependencies {

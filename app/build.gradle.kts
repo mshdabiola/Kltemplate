@@ -53,6 +53,10 @@ kotlin {
 
         }
         commonMain.dependencies {
+            implementation(projects.core.ui)
+            implementation(projects.core.data)
+            implementation(projects.core.model)
+
 
             implementation(libs.koin.core)
 
@@ -86,7 +90,6 @@ android {
     sourceSets["main"].resources.srcDirs("src/commonMain/composeResources")
 
     namespace = "com.hobit.sample"
-    experimentalProperties["android.experimental.enableScreenshotTest"] = true
     defaultConfig {
         applicationId = "com.hobit.sample"
         versionCode = libs.versions.versionCode.get().toIntOrNull()

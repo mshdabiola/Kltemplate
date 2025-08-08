@@ -41,7 +41,6 @@ import com.mshdabiola.designsystem.strings.SamStrings
 import com.hobit.sample.app.generated.resources.Res
 import com.hobit.sample.app.generated.resources.desktopicon
 import com.hobit.sample.di.appModule
-import com.hobit.sample.ui.SamApp
 import com.hobit.sample.ui.SplashScreen
 import com.mshdabiola.model.Platform
 import kotlinx.coroutines.delay

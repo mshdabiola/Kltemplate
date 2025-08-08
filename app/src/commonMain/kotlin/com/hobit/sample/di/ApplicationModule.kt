@@ -15,18 +15,15 @@
  */
 package com.hobit.sample.di
 
-import com.mshdabiola.data.di.dataModule
-import com.mshdabiola.detail.detailModule
 import com.hobit.sample.MainAppViewModel
-import com.mshdabiola.main.mainModule
-import com.mshdabiola.setting.settingModule
+import com.mshdabiola.data.di.dataModule
 import com.mshdabiola.ui.getLoggerWithTag
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 
 val appModule =
     module {
-        includes(dataModule, detailModule, mainModule, settingModule)
+        includes(dataModule)
         viewModel {
             MainAppViewModel(
                 userDataRepository = get(),

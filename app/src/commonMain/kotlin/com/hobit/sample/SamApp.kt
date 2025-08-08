@@ -13,14 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.hobit.sample.ui
+package com.hobit.sample
 
-import androidx.compose.ui.graphics.vector.ImageVector
-import org.jetbrains.compose.resources.StringResource
+import androidx.compose.foundation.layout.Box
+import androidx.compose.runtime.Composable
 
-data class TopLevelRoute<T : Any>(
-    val route: T,
-    val selectedIcon: ImageVector,
-    val unSelectedIcon: ImageVector,
-    val label: StringResource,
-)
+@Composable
+fun SamApp() {
+
+}
