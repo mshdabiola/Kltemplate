@@ -30,7 +30,7 @@ class KoverConventionPlugin : Plugin<Project> {
             )
 
             rootProject.subprojects {
-//                if (exclude.contains(this@subprojects.name)) return@subprojects
+                if (exclude.contains(this@subprojects.name)) return@subprojects
 
 //                if (this@subprojects.name == target.name) return@subprojects
 
