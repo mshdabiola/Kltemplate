@@ -32,7 +32,5 @@ class CiTaskPlugin : Plugin<Project> {
             outputLibsVersionsTomlFile.set(target.rootProject.file("gradle/libs.versions.toml"))
             outputs.upToDateWhen { false }
         }
-
-
     }
 }

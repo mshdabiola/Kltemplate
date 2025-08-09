@@ -22,7 +22,6 @@ import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputFile
 import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.TaskAction
-import java.io.File
 
 /**
  * A Gradle task to set versionName and versionCode in gradle/libs.versions.toml directly from provided values.
@@ -35,11 +34,8 @@ abstract class SetVersionFromTagTask : DefaultTask() {
     @get:InputFile
     abstract val libsVersionsTomlFile: RegularFileProperty
 
-
     @get:OutputFile
     abstract val outputLibsVersionsTomlFile: RegularFileProperty // Typically the same file for in-place updates
-
-
 
     @TaskAction
     fun setVersion() {
@@ -54,8 +50,6 @@ abstract class SetVersionFromTagTask : DefaultTask() {
 
         println("Setting versionName to: $versionNameToSet")
         println("Setting versionCode to: $versionCodeToSet")
-
-
 
         // Read all lines from the TOML file
         val lines = tomlFile.readLines()
@@ -97,7 +91,7 @@ abstract class SetVersionFromTagTask : DefaultTask() {
         // Remove all non-digit characters (like dots)
         var numericString = versionString.replace(".", "")
 
-        if (numericString.contains("-")){
+        if (numericString.contains("-")) {
             numericString = numericString.split("-")[0]
         }
         // Convert the resulting string to an integer
