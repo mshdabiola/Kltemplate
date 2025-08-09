@@ -30,7 +30,7 @@ class KoverConventionPlugin : Plugin<Project> {
             )
 
             rootProject.subprojects {
-                if (exclude.contains(this@subprojects.name)) return@subprojects
+//                if (exclude.contains(this@subprojects.name)) return@subprojects
 
 //                if (this@subprojects.name == target.name) return@subprojects
 
@@ -42,44 +42,44 @@ class KoverConventionPlugin : Plugin<Project> {
 
             configure<KoverProjectExtension> {
                 reports {
-                    filters {
-                        excludes {
-//                            androidGeneratedClasses()
-                            annotatedBy(
-                                // Compose previews
-                                "org.jetbrains.compose.ui.tooling.preview.Preview",
-                                "Preview",
-                                "androidx.compose.ui.tooling.preview.PreviewScreenSizes",
-                                "PreviewScreenSizes",
-                                "kotlinx.serialization.Serializable",
-                                "Serializable",
-                            )
-                            files(
-                                // Navigation helpers
-                                "*.*NavigationKt.kt",
-                            )
-                            classes(
-                                "*.*State*",
-
-                                // Composable singletons
-                                "*.*ComposableSingletons*",
-                                // Generated classes related to interfaces with default values
-                                "*.*DefaultImpls*",
-                                // Databases
-                                "*.database.*Database*",
-                                // Serializers
-                                "*UserDataJsonSerializer*",
-                                // Extension functions/classes
-                                "*Extension*",
-                            )
-                            packages(
-                                // Dependency injection
-                                "*.generated.resources",
-                                "*.di",
-                                "*.navigation",
-                            )
-                        }
-                    }
+//                    filters {
+//                        excludes {
+////                            androidGeneratedClasses()
+//                            annotatedBy(
+//                                // Compose previews
+//                                "org.jetbrains.compose.ui.tooling.preview.Preview",
+//                                "Preview",
+//                                "androidx.compose.ui.tooling.preview.PreviewScreenSizes",
+//                                "PreviewScreenSizes",
+//                                "kotlinx.serialization.Serializable",
+//                                "Serializable",
+//                            )
+//                            files(
+//                                // Navigation helpers
+//                                "*.*NavigationKt.kt",
+//                            )
+//                            classes(
+//                                "*.*State*",
+//
+//                                // Composable singletons
+//                                "*.*ComposableSingletons*",
+//                                // Generated classes related to interfaces with default values
+//                                "*.*DefaultImpls*",
+//                                // Databases
+//                                "*.database.*Database*",
+//                                // Serializers
+//                                "*UserDataJsonSerializer*",
+//                                // Extension functions/classes
+//                                "*Extension*",
+//                            )
+//                            packages(
+//                                // Dependency injection
+//                                "*.generated.resources",
+//                                "*.di",
+//                                "*.navigation",
+//                            )
+//                        }
+//                    }
                 }
             }
         }
