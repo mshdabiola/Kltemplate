@@ -10,6 +10,7 @@ coil = "3.3.0"
 compose-plugin = "1.9.0-beta01"
 dependencyGuard = "0.5.0"
 detekt = "1.23.8"
+dokka = "2.0.0"
 kermit = "2.0.6"
 koin = "4.1.0"
 koinCompose = "4.1.0"
@@ -107,6 +108,7 @@ android-test = { id = "com.android.test", version.ref = "androidGradlePlugin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 dependencyGuard = { id = "com.dropbox.dependency-guard", version.ref = "dependencyGuard" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
