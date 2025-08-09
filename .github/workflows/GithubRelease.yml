@@ -32,6 +32,11 @@ jobs:
           echo "githubPackagesUsername=${GITHUB_PACKAGES_USER_NAME}" >> gradle.properties
           echo -e "\t" >> gradle.properties
           echo "githubPackagesPassword=${GITHUB_PACKAGES_PASSWORD}" >> gradle.properties
+          echo "signing.keyId=${SIGNING_KEY_ID}" >> gradle.properties
+          echo -e "\t" >> gradle.properties
+          echo "signing.password=${SIGNING_KEY_PASSWORD}" >> gradle.properties
+          echo -e "\t" >> gradle.properties
+          echo "signing.secretKeyRingFile=${HOME}/secring.gpg" >> gradle.properties
 
       - name: Set version from tag
         id: version_tag
