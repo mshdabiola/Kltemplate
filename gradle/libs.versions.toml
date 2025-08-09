@@ -10,6 +10,7 @@ coil = "3.3.0"
 compose-plugin = "1.9.0-beta01"
 dependencyGuard = "0.5.0"
 detekt = "1.23.8"
+dokka = "2.0.0"
 kermit = "2.0.6"
 koin = "4.1.0"
 koinCompose = "4.1.0"
@@ -118,3 +119,4 @@ powerAssert = { id = "org.jetbrains.kotlin.plugin.power-assert", version.ref = "
 room = { id = "androidx.room", version.ref = "room" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 vanniktech = { id = "com.vanniktech.maven.publish", version.ref = "vanniktech-gradle" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }

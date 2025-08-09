@@ -27,6 +27,7 @@ class AndroidLibraryPublishConventionPlugin : Plugin<Project> {
         with(target) {
             with(pluginManager) {
                 apply("com.vanniktech.maven.publish")
+                apply("org.jetbrains.dokka")
             }
             extensions.configure<PublishingExtension> {
                 repositories {
