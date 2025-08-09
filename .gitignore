@@ -260,3 +260,4 @@ local.properties
 /shared/build/
 /modules/build/
 /output/
+secring.gpg
