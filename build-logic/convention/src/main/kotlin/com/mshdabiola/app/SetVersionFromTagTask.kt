@@ -35,18 +35,11 @@ abstract class SetVersionFromTagTask : DefaultTask() {
     @get:InputFile
     abstract val libsVersionsTomlFile: RegularFileProperty
 
-    @get:OutputFile
-    abstract val outputRevisionFile: RegularFileProperty
 
     @get:OutputFile
     abstract val outputLibsVersionsTomlFile: RegularFileProperty // Typically the same file for in-place updates
 
-    @get:OutputFile
-    val stringsXmlFile: File by lazy {
-        project.rootProject.projectDir.resolve(
-            "core/designsystem/src/commonMain/composeResources/values/strings.xml",
-        )
-    }
+
 
     @TaskAction
     fun setVersion() {
@@ -62,8 +55,7 @@ abstract class SetVersionFromTagTask : DefaultTask() {
         println("Setting versionName to: $versionNameToSet")
         println("Setting versionCode to: $versionCodeToSet")
 
-        val revFile = outputRevisionFile.asFile.get()
-        revFile.writeText("0")
+
 
         // Read all lines from the TOML file
         val lines = tomlFile.readLines()
@@ -96,13 +88,6 @@ abstract class SetVersionFromTagTask : DefaultTask() {
             updatedLines.add(modifiedLine)
         }
 
-        updateVersionInfoInStringsXml(
-            newVersionCode = versionCodeToSet.toString(),
-            newVersionName = versionNameToSet,
-            stringsXmlFile = stringsXmlFile,
-            logger = logger,
-        )
-
         // Write the updated lines back to the file
         tomlFile.writeText(updatedLines.joinToString("\n"))
         println("Successfully updated ${tomlFile.name}.")
@@ -110,8 +95,11 @@ abstract class SetVersionFromTagTask : DefaultTask() {
 
     private fun versionStringToNumber(versionString: String): Long {
         // Remove all non-digit characters (like dots)
-        val numericString = versionString.replace(".", "")
+        var numericString = versionString.replace(".", "")
 
+        if (numericString.contains("-")){
+            numericString = numericString.split("-")[0]
+        }
         // Convert the resulting string to an integer
         return numericString.toLongOrNull() ?: 1
     }
