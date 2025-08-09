@@ -17,7 +17,7 @@ plugins {
     alias(libs.plugins.detekt) apply false
     alias(libs.plugins.spotless)
     alias(libs.plugins.vanniktech) apply false
-    alias(libs.plugins.dokka) apply false
+    alias(libs.plugins.dokka)
     id("mshdabiola.ci.task")
 
 }
