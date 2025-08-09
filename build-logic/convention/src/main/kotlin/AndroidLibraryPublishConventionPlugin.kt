@@ -36,7 +36,7 @@ class AndroidLibraryPublishConventionPlugin : Plugin<Project> {
                 pom {
 
                     inceptionYear.set("2025")
-                    url.set("https://github.com/mshdabiola/series")
+                    url.set("https://github.com/mshdabiola/kltemplate")
 
                     licenses {
                         license {
