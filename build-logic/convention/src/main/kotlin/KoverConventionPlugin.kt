@@ -44,7 +44,7 @@ class KoverConventionPlugin : Plugin<Project> {
                 reports {
 //                    filters {
 //                        excludes {
-////                            androidGeneratedClasses()
+// //                            androidGeneratedClasses()
 //                            annotatedBy(
 //                                // Compose previews
 //                                "org.jetbrains.compose.ui.tooling.preview.Preview",
