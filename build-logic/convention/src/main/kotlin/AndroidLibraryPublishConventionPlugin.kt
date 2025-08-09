@@ -1,4 +1,18 @@
-
+/*
+ * Designed and developed by 2024 mshdabiola (lawal abiola)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 import com.mshdabiola.app.libs
 import com.vanniktech.maven.publish.MavenPublishBaseExtension
 import org.gradle.api.Plugin
@@ -12,7 +26,6 @@ class AndroidLibraryPublishConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
-
                 apply("com.vanniktech.maven.publish")
             }
             extensions.configure<PublishingExtension> {
@@ -21,7 +34,6 @@ class AndroidLibraryPublishConventionPlugin : Plugin<Project> {
                         name = "githubPackages"
                         url = uri("https://maven.pkg.github.com/mshdabiola/kltemplate")
                         credentials(PasswordCredentials::class)
-
                     }
                 }
             }
@@ -34,7 +46,6 @@ class AndroidLibraryPublishConventionPlugin : Plugin<Project> {
 
                 // Configure POM metadata for the published artifact
                 pom {
-
                     inceptionYear.set("2025")
                     url.set("https://github.com/mshdabiola/kltemplate")
 
@@ -63,14 +74,9 @@ class AndroidLibraryPublishConventionPlugin : Plugin<Project> {
                 // Configure publishing to Maven Central
                 publishToMavenCentral(automaticRelease = true)
 
-
                 // Enable GPG signing for all publications
                 signAllPublications()
             }
-
-
-
         }
-
     }
 }
