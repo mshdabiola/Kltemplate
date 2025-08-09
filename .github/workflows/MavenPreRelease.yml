@@ -46,6 +46,10 @@ jobs:
           echo -e "\t" >> gradle.properties
           echo "signing.secretKeyRingFile=${HOME}/secring.gpg" >> gradle.properties
 
+      - name: Set version from tag
+        id: version_tag
+        run: ./gradlew setVersionFromTag -PnewVersionName=${{ github.ref_name }}
+
       - name: Publish To Maven Central
         run: |
           ./gradlew publishAndReleaseToMavenCentral --no-configuration-cache

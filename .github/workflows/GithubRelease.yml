@@ -33,6 +33,10 @@ jobs:
           echo -e "\t" >> gradle.properties
           echo "githubPackagesPassword=${GITHUB_PACKAGES_PASSWORD}" >> gradle.properties
 
+      - name: Set version from tag
+        id: version_tag
+        run: ./gradlew setVersionFromTag -PnewVersionName=${{ github.ref_name }}
+
       - name: Publish To GitHub Packages
         run: |
           ./gradlew publishAllPublicationsToGithubPackagesRepository
