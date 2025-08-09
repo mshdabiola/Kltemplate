@@ -39,9 +39,23 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.room)
 
-
+    id("mshdabiola.android.library.publish")
 
 }
+
+
+mavenPublishing {
+    // Define coordinates for the published artifact
+    coordinates(
+        artifactId = "database",
+    )
+    // Configure POM metadata for the published artifact
+    pom {
+        name.set("sample database")
+        description.set("database")
+    }
+}
+
 android {
     namespace = "com.mshdabiola.database"
 }

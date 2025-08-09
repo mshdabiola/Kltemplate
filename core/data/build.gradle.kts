@@ -35,7 +35,23 @@ import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     id("mshdabiola.android.library")
+    id("mshdabiola.android.library.publish")
+
 }
+
+
+mavenPublishing {
+    // Define coordinates for the published artifact
+    coordinates(
+        artifactId = "data",
+    )
+    // Configure POM metadata for the published artifact
+    pom {
+        name.set("sample data")
+        description.set("data")
+    }
+}
+
 
 android {
     namespace = "com.mshdabiola.data"

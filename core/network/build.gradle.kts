@@ -17,6 +17,21 @@
 plugins {
     id("mshdabiola.android.library")
     alias(libs.plugins.kotlin.serialization)
+    id("mshdabiola.android.library.publish")
+
+}
+
+
+mavenPublishing {
+    // Define coordinates for the published artifact
+    coordinates(
+        artifactId = "network",
+    )
+    // Configure POM metadata for the published artifact
+    pom {
+        name.set("sample network")
+        description.set("network")
+    }
 }
 
 android {

@@ -74,8 +74,9 @@ dependencies {
     compileOnly(libs.kover.gradlePlugin)
     compileOnly(libs.spotless.gradlePlugin)
     compileOnly(libs.detekt.gradlePlugin)
+    compileOnly(libs.vanniktech.gradlePlugin)
 
-//    compileOnly("org.jlleitschuh.gradle:ktlint-gradle:12.3.0")
+
 
 
 
@@ -137,6 +138,10 @@ gradlePlugin {
         register("kover") {
             id = "mshdabiola.kover"
             implementationClass = "KoverConventionPlugin"
+        }
+        register("androidLibraryPublish") {
+            id = "mshdabiola.android.library.publish"
+            implementationClass = "AndroidLibraryPublishConventionPlugin"
         }
 
     }

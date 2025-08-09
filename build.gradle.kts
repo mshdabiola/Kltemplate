@@ -16,6 +16,7 @@ plugins {
     alias(libs.plugins.kover) apply false
     alias(libs.plugins.detekt) apply false
     alias(libs.plugins.spotless)
+    alias(libs.plugins.vanniktech) apply false
     id("mshdabiola.ci.task")
 
 }
