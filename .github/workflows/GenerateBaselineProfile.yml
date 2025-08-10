@@ -62,3 +62,6 @@ jobs:
           delete-branch: true
           reviewers: mshdabiola
           branch: actions/baseline-profiles
+          signoff: false
+          base: develop
+
