@@ -6,6 +6,10 @@ androidxCore = "1.16.0"
 androidxDataStore = "1.1.7"
 androidx-lifecycle = "2.9.1"
 androidxWindowManager = "1.4.0"
+androidxMacroBenchmark = "1.4.0"
+androidxProfileinstaller = "1.4.1"
+androidxUiAutomator = "2.3.0"
+androidxTestRunner = "1.7.0"
 coil = "3.3.0"
 compose-plugin = "1.9.0-beta01"
 dependencyGuard = "0.5.0"
@@ -46,6 +50,11 @@ androidx-datastore-core-okio = { group = "androidx.datastore", name = "datastore
 androidx-lifecycle-runtimeCompose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-viewmodelCompose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle" }
 androidx-window-core = { group = "androidx.window", name = "window-core", version.ref = "androidxWindowManager" }
+androidx-profileinstaller = { group = "androidx.profileinstaller", name = "profileinstaller", version.ref = "androidxProfileinstaller" }
+androidx-test-runner = { group = "androidx.test", name = "runner", version.ref = "androidxTestRunner" }
+androidx-test-uiautomator = { group = "androidx.test.uiautomator", name = "uiautomator", version.ref = "androidxUiAutomator" }
+androidx-benchmark-macro = { group = "androidx.benchmark", name = "benchmark-macro-junit4", version.ref = "androidxMacroBenchmark" }
+
 coil-kt = { module = "io.coil-kt.coil3:coil", version.ref = "coil" }
 coil-kt-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
 coil-kt-network = { module = "io.coil-kt.coil3:coil-network-ktor3", version.ref = "coil" }
@@ -120,3 +129,4 @@ powerAssert = { id = "org.jetbrains.kotlin.plugin.power-assert", version.ref = "
 room = { id = "androidx.room", version.ref = "room" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 vanniktech = { id = "com.vanniktech.maven.publish", version.ref = "vanniktech-gradle" }
+baselineprofile = { id = "androidx.baselineprofile", version.ref = "androidxMacroBenchmark" }

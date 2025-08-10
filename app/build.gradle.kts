@@ -18,6 +18,7 @@ plugins {
     id("mshdabiola.android.application")
     id("mshdabiola.android.application.compose")
     alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.baselineprofile)
 
 }
 
@@ -32,6 +33,7 @@ dependencies {
 
     implementation(libs.koin.android)
 
+    baselineProfile(projects.benchmarks)
 
 
     implementation(libs.androidx.activity.compose)

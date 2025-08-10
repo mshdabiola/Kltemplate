@@ -48,3 +48,4 @@ include(":core:ui")
 include(":core:datastore")
 
 include(":app")
+include(":benchmarks")

@@ -26,6 +26,7 @@ plugins {
     id("mshdabiola.android.library")
     id("mshdabiola.android.library.compose")
     id("mshdabiola.android.library.publish")
+    alias(libs.plugins.baselineprofile)
 
 }
 
@@ -50,12 +51,17 @@ android {
     namespace = "com.mshdabiola.ui"
 
 }
-
 dependencies {
-  androidTestImplementation(projects.core.testing)
+    baselineProfile(projects.benchmarks)
 
 }
 
+baselineProfile {
+    baselineProfileOutputDir = "../../src/androidMain"
+    filter {
+        include("com.mshdabiola.ui.**")
+    }
+}
 kotlin {
     applyDefaultHierarchyTemplate {
         common {
