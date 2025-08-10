@@ -20,10 +20,18 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import com.mshdabiola.model.Note
+import com.mshdabiola.ui.NoteCard
 
 @Composable
 fun SamApp() {
     Box(modifier = Modifier.fillMaxSize()) {
-        Text("Texting")
+        NoteCard(
+            noteUiState = Note(
+                title = "Title",
+                content = "Content"
+            ),
+            onClick = {}
+        )
     }
 }
