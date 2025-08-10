@@ -68,7 +68,6 @@ dependencies {
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.android.gradlePlugin)
     implementation(libs.truth)
-    compileOnly(libs.ksp.gradlePlugin)
     compileOnly(libs.kotlin.powerAssert)
     compileOnly(libs.compose.gradlePlugin)
     compileOnly(libs.kover.gradlePlugin)
