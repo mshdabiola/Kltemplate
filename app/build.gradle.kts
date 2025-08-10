@@ -26,12 +26,6 @@ group = "com.hobit.sample"
 version = libs.versions.versionName.get()
 
 dependencies {
-//    linuxAmd64(compose.desktop.linux_x64)
-//    macAmd64(compose.desktop.macos_x64)
-//    macAarch64(compose.desktop.macos_arm64)
-//    windowsAmd64(compose.desktop.windows_x64)
-
-    implementation(libs.koin.android)
 
     baselineProfile(projects.benchmarks)
 
@@ -41,7 +35,6 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtimeCompose)
     implementation(libs.androidx.window.core)
 
-    implementation(libs.kermit.koin)
 
 }
 
@@ -54,15 +47,7 @@ kotlin {
 
         }
         commonMain.dependencies {
-            implementation(projects.core.ui)
-            implementation(projects.core.data)
-            implementation(projects.core.model)
-
-
-            implementation(libs.koin.core)
-
-            // Logger
-            implementation(libs.kermit)
+            implementation(projects.library)
 
             implementation(compose.components.resources)
 
@@ -71,13 +56,10 @@ kotlin {
 
 
         jvmMain.dependencies {
-            implementation(libs.kermit.koin)
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutines.swing)
         }
-        jvmTest.dependencies {
-            implementation(projects.core.testing)
-        }
+
 
     }
 }
