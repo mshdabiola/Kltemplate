@@ -66,6 +66,7 @@ jobs:
           allowUpdates: true
           generateReleaseNotes: true
           prerelease: false
+#          discussionCategory: Announcements
 
       - name: Prepend Unreleased To Changelog
         id: prepend_unreleased
