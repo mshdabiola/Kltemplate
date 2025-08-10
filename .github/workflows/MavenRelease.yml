@@ -51,9 +51,7 @@ jobs:
         run: ./gradlew setVersionFromTag -PnewVersionName=${{ github.ref_name }}
 
       - name: Publish To Maven Central
-        run: |
-          ./gradlew publishAndReleaseToMavenCentral --no-configuration-cache
-
+        run: ./gradlew publishAndReleaseToMavenCentral --no-configuration-cache
 
       - name: Extract release notes
         id: release_notes
@@ -68,6 +66,22 @@ jobs:
           allowUpdates: true
           generateReleaseNotes: true
           prerelease: false
+
+      - name: Prepend Unreleased To Changelog
+        id: prepend_unreleased
+        run: ./gradlew prependUnreleasedChangelog -PnewVersionName=${{ github.ref_name }}
+
+      # Create Pull Request
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "Generate baseline profiles"
+          title: "Generate baseline profiles"
+          delete-branch: true
+          reviewers: mshdabiola
+          branch: actions/baseline-profiles
+          signoff: false
+          base: develop
 
   publish_dokka:
     name: Dokka docs
