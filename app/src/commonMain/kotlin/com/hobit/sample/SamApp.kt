@@ -19,8 +19,8 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.mshdabiola.model.Note
 import com.mshdabiola.library.NoteCard
+import com.mshdabiola.model.Note
 
 @Composable
 fun SamApp() {
@@ -28,9 +28,9 @@ fun SamApp() {
         NoteCard(
             noteUiState = Note(
                 title = "Title",
-                content = "Content"
+                content = "Content",
             ),
-            onClick = {}
+            onClick = {},
         )
     }
 }
