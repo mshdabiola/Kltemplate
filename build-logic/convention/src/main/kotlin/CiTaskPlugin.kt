@@ -30,6 +30,7 @@ class CiTaskPlugin : Plugin<Project> {
             // newVersionCode is derived from newVersionName in the task if not explicitly set via property
             libsVersionsTomlFile.set(target.rootProject.file("gradle/libs.versions.toml"))
             outputLibsVersionsTomlFile.set(target.rootProject.file("gradle/libs.versions.toml"))
+            changelogFile.set(target.rootProject.file("CHANGELOG.md"))
             outputs.upToDateWhen { false }
         }
     }
