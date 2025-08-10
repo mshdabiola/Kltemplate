@@ -31,9 +31,6 @@ dependencies {
 
 
     implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtimeCompose)
-    implementation(libs.androidx.window.core)
 
 
 }
@@ -41,11 +38,6 @@ dependencies {
 kotlin {
     sourceSets {
 
-        androidMain.dependencies {
-            implementation(libs.androidx.activity.compose)
-            implementation(libs.kotlinx.coroutines.android)
-
-        }
         commonMain.dependencies {
             implementation(projects.library)
 
