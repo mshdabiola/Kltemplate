@@ -71,10 +71,13 @@ abstract class PrependUnreleasedToChangelogTask : DefaultTask() {
                 insertAt = changelogTitleIndex + 1
                 // Skip standard preamble lines or blank lines after title
                 while (insertAt < newLines.size &&
-                       (newLines[insertAt].isBlank() ||
-                        newLines[insertAt].trim().startsWith("All notable changes") ||
-                        newLines[insertAt].trim().startsWith("The format is based on") ||
-                        newLines[insertAt].trim().startsWith("and this project adheres to"))) {
+                    (
+                        newLines[insertAt].isBlank() ||
+                            newLines[insertAt].trim().startsWith("All notable changes") ||
+                            newLines[insertAt].trim().startsWith("The format is based on") ||
+                            newLines[insertAt].trim().startsWith("and this project adheres to")
+                        )
+                ) {
                     insertAt++
                 }
             } else {
@@ -97,7 +100,7 @@ abstract class PrependUnreleasedToChangelogTask : DefaultTask() {
             linesToInsert.add("")
         } else if (insertAt == newLines.size && linesToInsert.lastOrNull()?.isNotBlank() == true) {
             // If inserting at the very end of the file, ensure a trailing blank line if our last insert wasn't one.
-             linesToInsert.add("")
+            linesToInsert.add("")
         }
 
         newLines.addAll(insertAt, linesToInsert)

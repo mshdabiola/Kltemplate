@@ -15,9 +15,6 @@
  */
 package com.mshdabiola.app
 
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
 import org.gradle.api.DefaultTask
 import org.gradle.api.file.RegularFileProperty
 import org.gradle.api.provider.Property
@@ -25,6 +22,9 @@ import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputFile
 import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.TaskAction
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 /**
  * A Gradle task to set versionName and versionCode in gradle/libs.versions.toml and update CHANGELOG.md.
@@ -107,7 +107,7 @@ abstract class SetVersionFromTagTask : DefaultTask() {
         }
 
         val newVersionLink = "[$newVersion]: https://github.com/mshdabiola/kltemplate/$newVersion"
-        val versionLinkIndex = lines.indexOfFirst { it.contains( "[Unreleased]") }
+        val versionLinkIndex = lines.indexOfFirst { it.contains("[Unreleased]") }
         if (versionLinkIndex != -1) {
             lines[versionLinkIndex] = newVersionLink
         }
