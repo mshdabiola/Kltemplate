@@ -1,35 +1,37 @@
-# Workflow name
-name: baseline-profiles
-
-# Workflow title
-run-name: ${{ github.actor }} requested a workflow
+name: Generate Baseline Profiles
 
 on:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+-*'
   workflow_dispatch:
 
-# Jobs to executed on GitHub machines
+
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
 
-  # Job name
-  generate-baseline-profiles:
-
-    # Operating system where the job gets to be executed
-    runs-on: macos-latest
-
-    # Job steps
     steps:
+      - name: Enable KVM group perms
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+          ls /dev/kvm
 
-      # Checks your code out on the machine
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      # Sets java up
+      - name: Copy CI gradle.properties
+        run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
+
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
           java-version-file: .github/workflows/.java-version
 
-      # Sets gradle up
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
@@ -37,22 +39,19 @@ jobs:
           build-scan-terms-of-use-url: "https://gradle.com/terms-of-service"
           build-scan-terms-of-use-agree: "yes"
 
-      # Grants execute permission to gradle (safety step)
-      - name: Grant Permissions to gradlew
-        run: chmod +x gradlew
+      - name: Install GMD image for baseline profile generation
+        run: yes | "$ANDROID_HOME"/cmdline-tools/latest/bin/sdkmanager "system-images;android-33;aosp_atd;x86_64"
 
-      # This allows us to build most of what we need without the emulator running
-      # and using resources
-      - name: Build app and benchmark
-        run: ./gradlew :benchmarks:assembleBenchmark
+      - name: Accept Android licenses
+        run: yes | "$ANDROID_HOME"/cmdline-tools/latest/bin/sdkmanager --licenses || true
 
-      # Cleans managed device if previously settle and space currently is not available
-      - name: Clean Managed Devices
-        run: ./gradlew cleanManagedDevices --unused-only
-
-      # Generates Baseline Profile
-      - name: Generate Baseline Profile
-        run: ./gradlew :library:generateBaselineProfile -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect" -Pandroid.testInstrumentationRunnerArguments.androidx.benchmark.enabledRules=BaselineProfile -Pandroid.experimental.testOptions.managedDevices.setupTimeoutMinutes=20 -Dorg.gradle.workers.max=4
+      - name: Build release variant including baseline profile generation
+        run: ./gradlew :library:generateBaselineProfile
+          -Pandroid.testInstrumentationRunnerArguments.androidx.benchmark.enabledRules=BaselineProfile
+          -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect"
+          -Pandroid.experimental.testOptions.managedDevices.emulator.showKernelLogging=true
+          -Pandroid.experimental.androidTest.numManagedDeviceShards=1
+          -Pandroid.experimental.testOptions.managedDevices.maxConcurrentDevices=1
 
       # Create Pull Request
       - name: Create Pull Request
