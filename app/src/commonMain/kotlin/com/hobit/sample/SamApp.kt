@@ -17,11 +17,10 @@ package com.hobit.sample
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.mshdabiola.model.Note
-import com.mshdabiola.ui.NoteCard
+import com.mshdabiola.library.NoteCard
 
 @Composable
 fun SamApp() {
