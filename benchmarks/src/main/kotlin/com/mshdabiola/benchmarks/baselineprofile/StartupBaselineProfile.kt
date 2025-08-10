@@ -19,8 +19,6 @@ package com.mshdabiola.benchmarks.baselineprofile
 
 import androidx.benchmark.macro.MacrobenchmarkScope
 import androidx.benchmark.macro.junit4.BaselineProfileRule
-import com.mshdabiola.benchmarks.PACKAGE_NAME
-import com.mshdabiola.benchmarks.startActivity
 import org.junit.Rule
 import org.junit.Test
 
@@ -34,8 +32,8 @@ class StartupBaselineProfile {
     @Test
     fun generate() =
         baselineProfileRule.collect(
-            PACKAGE_NAME,
+            "com.hobit.sample",
             includeInStartupProfile = true,
-            profileBlock = MacrobenchmarkScope::startActivity,
+            profileBlock = MacrobenchmarkScope::startActivityAndWait,
         )
 }
