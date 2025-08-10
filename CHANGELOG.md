@@ -8,6 +8,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 [Unreleased]: https://github.com/mshdabiola/kltemplate/compare/0.0.5...HEAD
 
+### Added
+- `PrependUnreleasedToChangelogTask`: New Gradle task to add an "Unreleased" section to `CHANGELOG.md` after a release, preparing for the next development cycle.
+- Integrated `PrependUnreleasedToChangelogTask` into `CiTaskPlugin`.
+
+### Changed
+- `SetVersionFromTagTask`:
+    - Now updates `CHANGELOG.md` to set the release version and date for the "[Unreleased]" section.
+    - Correctly updates and adds link definitions for the released version and the new "[Unreleased]" section.
+- `CiTaskPlugin`:
+    - `setVersionFromTag` task now correctly passes the `changelogFile` parameter.
+    - Added and configured `prependUnreleasedChangelog` task.
+
 ## [0.0.5] - 2025-08-10
 [0.0.5]: https://github.com/mshdabiola/kltemplate/0.0.5
 
