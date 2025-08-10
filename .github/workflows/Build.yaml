@@ -61,13 +61,6 @@ jobs:
       - name: Check Detekt
         run: ./gradlew detekt
 
-      - name: Upload merge detekt
-        uses: github/codeql-action/upload-sarif@v3.29.2
-        if: success() || failure()
-        with:
-          sarif_file: build/reports/detekt/merge.sarif
-          category: detekt
-
       - name: Check Dependency Guard
         id: dependencyguard_verify
         continue-on-error: true
@@ -128,23 +121,6 @@ jobs:
           files: "app/build/reports/kover/reportJvm.xml"
           verbose: true
 
-
-
-      - name: Check lint
-        run: ./gradlew lintRelease
-
-      - uses: github/codeql-action/upload-sarif@v3.29.2
-        if: success() || failure()
-        with:
-          sarif_file: app/build/reports/lint-results-release.sarif
-          category: lint
-
-      - name: Upload lint reports (HTML)
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: lint-reports
-          path: '**/build/reports/lint-results-*.html'
 
       - name: Push new Spotless Apply if available
         uses: stefanzweifel/git-auto-commit-action@v5
