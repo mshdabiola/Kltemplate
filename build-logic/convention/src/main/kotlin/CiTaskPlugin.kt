@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import com.mshdabiola.app.PrependUnreleasedToChangelogTask
 import com.mshdabiola.app.SetVersionFromTagTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -23,7 +24,7 @@ class CiTaskPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         target.tasks.register<SetVersionFromTagTask>("setVersionFromTag") {
             description =
-                "Sets the versionName and versionCode in gradle/libs.versions.toml based on provided tag values."
+                "Sets the versionName and versionCode in gradle/libs.versions.toml and updates CHANGELOG.md based on provided tag values."
             group = "CI Utilities"
 
             newVersionName.set(project.providers.gradleProperty("newVersionName").orElse("0.0.1"))
@@ -32,6 +33,16 @@ class CiTaskPlugin : Plugin<Project> {
             outputLibsVersionsTomlFile.set(target.rootProject.file("gradle/libs.versions.toml"))
             changelogFile.set(target.rootProject.file("CHANGELOG.md"))
             outputs.upToDateWhen { false }
+        }
+
+        target.tasks.register<PrependUnreleasedToChangelogTask>("prependUnreleasedChangelog") {
+            description = "Prepends a new [Unreleased] section to CHANGELOG.md for the next development cycle."
+            group = "CI Utilities"
+
+            // This should be the version that was *just released* to correctly form the compare link.
+            newVersionName.set(project.providers.gradleProperty("newVersionName").orElse("0.0.1"))
+            changelogFile.set(target.rootProject.file("CHANGELOG.md"))
+            outputs.upToDateWhen { false } // Ensure it always runs if invoked
         }
     }
 }
