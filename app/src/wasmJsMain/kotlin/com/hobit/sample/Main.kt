@@ -17,46 +17,12 @@ package com.hobit.sample
 
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.window.ComposeViewport
-import co.touchlab.kermit.DefaultFormatter
-import co.touchlab.kermit.Logger
-import co.touchlab.kermit.Severity
-import co.touchlab.kermit.loggerConfigInit
-import co.touchlab.kermit.platformLogWriter
-import com.hobit.sample.di.appModule
-import com.mshdabiola.model.Platform
 import kotlinx.browser.document
-import org.koin.core.context.GlobalContext.startKoin
-import org.koin.dsl.bind
-import org.koin.dsl.module
 
-@OptIn(ExperimentalComposeUiApi::class)
-fun mainApp() {
-    ComposeViewport(document.body!!) {
-        SamApp()
-    }
-}
 
 @OptIn(ExperimentalComposeUiApi::class)
 fun main() {
-    val logger =
-        Logger(
-            loggerConfigInit(
-                minSeverity = Severity.Error,
-                logWriters = arrayOf(platformLogWriter(DefaultFormatter)),
-            ),
-        )
-    val applicationModule = module {
-        single { Platform.Web } bind Platform::class
-        single {
-            logger
-        }
+    ComposeViewport(document.body!!) {
+        SamApp()
     }
-
-    startKoin {
-        modules(
-            appModule,
-            applicationModule,
-        )
-    }
-    mainApp()
 }

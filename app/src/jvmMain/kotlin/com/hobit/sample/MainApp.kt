@@ -23,23 +23,11 @@ import androidx.compose.ui.window.WindowPlacement
 import androidx.compose.ui.window.WindowPosition
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
-import co.touchlab.kermit.DefaultFormatter
-import co.touchlab.kermit.Logger
-import co.touchlab.kermit.Severity
-import co.touchlab.kermit.koin.KermitKoinLogger
-import co.touchlab.kermit.koin.kermitLoggerModule
-import co.touchlab.kermit.loggerConfigInit
-import co.touchlab.kermit.platformLogWriter
 import com.hobit.sample.app.generated.resources.Res
 import com.hobit.sample.app.generated.resources.desktopicon
-import com.hobit.sample.di.appModule
-import com.mshdabiola.model.Platform
 import org.jetbrains.compose.resources.painterResource
-import org.koin.core.context.GlobalContext.startKoin
-import org.koin.dsl.bind
-import org.koin.dsl.module
 
-fun mainApp() {
+fun main() {
     application {
         val windowState =
             rememberWindowState(
@@ -57,45 +45,4 @@ fun mainApp() {
             SamApp()
         }
     }
-}
-
-fun main() {
-    val logger =
-        Logger(
-            loggerConfigInit(
-                minSeverity = Severity.Verbose,
-                logWriters = arrayOf(platformLogWriter(DefaultFormatter)),
-            ),
-        )
-    val applicationModule = module {
-        single { getPlatform() } bind Platform::class
-    }
-
-    startKoin {
-        logger(
-            KermitKoinLogger(Logger.withTag("koin")),
-        )
-
-        modules(
-            appModule,
-            kermitLoggerModule(logger),
-            applicationModule,
-        )
-    }
-    mainApp()
-}
-
-private fun getPlatform(): Platform.Desktop {
-    val operSys = System.getProperty("os.name").lowercase()
-    val os = when {
-        operSys.contains("win") -> "Windows"
-        operSys.contains("nix") || operSys.contains("nux") || operSys.contains("aix") -> "Linux"
-        operSys.contains("mac") -> "MacOS"
-        else -> {
-            //  Logger.e("PlatformUtil.jvm") { "Unknown platform: $operSys" }
-            "Linux"
-        }
-    }
-    val javaVersion = System.getProperty("java.version")
-    return Platform.Desktop(os, javaVersion)
 }

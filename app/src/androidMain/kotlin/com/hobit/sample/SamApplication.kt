@@ -16,39 +16,5 @@
 package com.hobit.sample
 
 import android.app.Application
-import co.touchlab.kermit.DefaultFormatter
-import co.touchlab.kermit.Logger
-import co.touchlab.kermit.Severity
-import co.touchlab.kermit.koin.KermitKoinLogger
-import co.touchlab.kermit.koin.kermitLoggerModule
-import co.touchlab.kermit.loggerConfigInit
-import co.touchlab.kermit.platformLogWriter
-import com.hobit.sample.di.appModule
-import org.koin.android.ext.koin.androidContext
-import org.koin.core.context.startKoin
 
-class SamApplication : Application() {
-    override fun onCreate() {
-        super.onCreate()
-
-        val logger =
-            Logger(
-                loggerConfigInit(
-                    minSeverity = Severity.Verbose,
-
-                    logWriters = arrayOf(platformLogWriter(DefaultFormatter)),
-                ),
-            )
-
-        startKoin {
-            logger(
-                KermitKoinLogger(Logger.withTag("koin")),
-            )
-            androidContext(this@SamApplication)
-            modules(
-                appModule,
-                kermitLoggerModule(logger),
-            )
-        }
-    }
-}
+class SamApplication : Application()
