@@ -54,12 +54,19 @@ jobs:
         run: |
           ./gradlew publishAndReleaseToMavenCentral --no-configuration-cache
 
-      - name: Draft Release
-        uses: ncipollo/release-action@v1.18.0
+
+      - name: Extract release notes
+        id: release_notes
+        uses: ffurrer2/extract-release-notes@v2
         with:
+          prerelease: false
+
+      - name: Create release
+        uses: ncipollo/release-action@v1
+        with:
+          body: ${{ steps.release_notes.outputs.release_notes }}
           allowUpdates: true
           generateReleaseNotes: true
-#          bodyFile: whatsnew-en-US
           prerelease: false
 
   publish_dokka:
