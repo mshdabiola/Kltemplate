@@ -30,5 +30,6 @@ class GenerateBaselineProfile {
         baselineProfileRule.collect("com.hobit.sample") {
             startActivityAndWait()
 
+
         }
 }
