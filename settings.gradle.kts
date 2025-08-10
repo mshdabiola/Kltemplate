@@ -39,12 +39,6 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Kltemplate"
-include(":core:database")
-include(":core:model")
-include(":core:network")
-include(":core:data")
-include(":core:testing")
-include(":core:ui")
-include(":core:datastore")
-
+include(":library")
 include(":app")
+include(":benchmarks")

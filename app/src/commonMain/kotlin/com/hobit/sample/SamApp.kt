@@ -17,13 +17,20 @@ package com.hobit.sample
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import com.mshdabiola.library.NoteCard
+import com.mshdabiola.model.Note
 
 @Composable
 fun SamApp() {
     Box(modifier = Modifier.fillMaxSize()) {
-        Text("Texting")
+        NoteCard(
+            noteUiState = Note(
+                title = "Title",
+                content = "Content",
+            ),
+            onClick = {},
+        )
     }
 }

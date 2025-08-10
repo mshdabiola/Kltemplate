@@ -18,6 +18,7 @@ plugins {
     id("mshdabiola.android.application")
     id("mshdabiola.android.application.compose")
     alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.baselineprofile)
 
 }
 
@@ -25,42 +26,19 @@ group = "com.hobit.sample"
 version = libs.versions.versionName.get()
 
 dependencies {
-//    linuxAmd64(compose.desktop.linux_x64)
-//    macAmd64(compose.desktop.macos_x64)
-//    macAarch64(compose.desktop.macos_arm64)
-//    windowsAmd64(compose.desktop.windows_x64)
 
-    implementation(libs.koin.android)
-
-
-
+    baselineProfile(projects.benchmarks)
     implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtimeCompose)
-    implementation(libs.androidx.window.core)
+    implementation(libs.androidx.profileinstaller)
 
-    implementation(libs.kermit.koin)
 
 }
 
 kotlin {
     sourceSets {
 
-        androidMain.dependencies {
-            implementation(libs.androidx.activity.compose)
-            implementation(libs.kotlinx.coroutines.android)
-
-        }
         commonMain.dependencies {
-            implementation(projects.core.ui)
-            implementation(projects.core.data)
-            implementation(projects.core.model)
-
-
-            implementation(libs.koin.core)
-
-            // Logger
-            implementation(libs.kermit)
+            implementation(projects.library)
 
             implementation(compose.components.resources)
 
@@ -69,13 +47,10 @@ kotlin {
 
 
         jvmMain.dependencies {
-            implementation(libs.kermit.koin)
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutines.swing)
         }
-        jvmTest.dependencies {
-            implementation(projects.core.testing)
-        }
+
 
     }
 }

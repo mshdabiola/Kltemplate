@@ -1,34 +1,7 @@
- ./gradlew :modules:designsystem:jacocoTestReport
-
-        ./gradlew lintFossReliantDebug; ./gradlew updateFossReliantReleaseBadging; ./gradlew dependencyGuardBaseline;  ./gradlew updateFossReliantDebugScreenshotTest;./gradlew spotlessApply --init-script gradle/init.gradle.kts --no-configuration-cache
-
-        ./gradlew lintGooglePlayDebug; ./gradlew updateGooglePlayReleaseBadging; ./gradlew dependencyGuardBaseline; ./gradlew spotlessApply --init-script gradle/init.gradle.kts --no-configuration-cache; ./gradlew updateFossReliantDebugScreenshotTest
-
-        ./gradlew dependencyGuard; ./gradlew checkReleaseBadging; ./gradlew spotlessCheck --init-script gradle/init.gradle.kts --no-configuration-cache; ./gradlew verifyRoborazziDebug
-
-
-    ./gradlew assembleDebug -PenableComposeCompilerMetrics=true -PenableComposeCompilerReports=true
-    ./gradlew :composeApp:generateReleaseBaselineProfile
-
-    ./gradlew wasmJsBrowserRun -t
-    ./gradlew wasmJsBrowserDistribution
-
-export TOKEN="your_actual_token"
- conveyor make rendered-icons --overwrite
-    conveyor make site
-    ./gradlew run
+ ./gradlew :library:generateBaselineProfile
 
 ./gradlew app:jvmRunHot -PmainClass=com.hobit.sample.MainAppKt
 ./gradlew app:jvmRun -PmainClass=com.hobit.sample.MainAppKt
-Use `./gradlew reload` to hot reload the application
-| Use `./gradlew :app:hotReloadJvmMain` to hot reload the application (alternative)
-| Use `./gradlew :app:jvmRunHot --auto` to automatically reload the application on source changes
-
-//./gradlew assembleDebug -PenableComposeCompilerReports=true
-// ./gradlew assembleDebug -PenableComposeCompilerMetrics=true
-./gradlew build-logic:convention:spotlessApply
-https://randombits.dev/articles/android/fdroid
-
 
  ./gradlew renameProjectArtifacts -PnewPackageName=com.abiola.notepad -PnewPrefix=NtP
 publishToMavenCentral - Publishes to Maven Central

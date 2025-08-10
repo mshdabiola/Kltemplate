@@ -24,9 +24,7 @@ class KoverConventionPlugin : Plugin<Project> {
             val koverPlugin = "org.jetbrains.kotlinx.kover"
             pluginManager.apply(koverPlugin)
             val exclude = listOf(
-                "core",
-                "model",
-                "testing",
+                "benchmarks",
             )
 
             rootProject.subprojects {
