@@ -28,9 +28,8 @@ version = libs.versions.versionName.get()
 dependencies {
 
     baselineProfile(projects.benchmarks)
-
-
     implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.profileinstaller)
 
 
 }
