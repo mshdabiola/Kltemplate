@@ -123,14 +123,14 @@ jobs:
 
 
       - name: Push new Spotless Apply if available
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
           file_pattern: '**/*.kt **/*.kts **/*.xml'
           disable_globbing: true
           commit_message: "🤖 Apply Spotless formatting"
 
       - name: Push new Dependency Guard baselines if available
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v6
         if: steps.dependencyguard_baseline.outcome == 'success'
         with:
           file_pattern: '**/dependencies/*.txt'
