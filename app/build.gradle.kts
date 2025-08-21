@@ -22,7 +22,7 @@ plugins {
 
 }
 
-group = "com.hobit.sample"
+group = libs.versions.groupId.get()
 version = libs.versions.versionName.get()
 
 dependencies {
