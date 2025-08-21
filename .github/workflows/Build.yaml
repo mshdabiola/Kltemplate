@@ -61,6 +61,9 @@ jobs:
       - name: Check Detekt
         run: ./gradlew detekt
 
+      - name: Check Legacy ABI
+        run: ./gradlew checkLegacyAbi
+
       - name: Check Dependency Guard
         id: dependencyguard_verify
         continue-on-error: true
