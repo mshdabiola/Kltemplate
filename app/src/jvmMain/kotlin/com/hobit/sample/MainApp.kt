@@ -23,8 +23,8 @@ import androidx.compose.ui.window.WindowPlacement
 import androidx.compose.ui.window.WindowPosition
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
-import com.hobit.sample.app.generated.resources.Res
-import com.hobit.sample.app.generated.resources.desktopicon
+import io.github.mshdabiola.app.generated.resources.Res
+import io.github.mshdabiola.app.generated.resources.desktopicon
 import org.jetbrains.compose.resources.painterResource
 
 fun main() {
