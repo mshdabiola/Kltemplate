@@ -20,7 +20,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.mshdabiola.library.NoteCard
-import com.mshdabiola.model.Note
+import com.mshdabiola.library.Note
 
 @Composable
 fun SamApp() {
