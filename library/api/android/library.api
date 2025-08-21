@@ -1,0 +1,31 @@
+public final class com/mshdabiola/library/NoteCardKt {
+	public static final fun NoteCard (Landroidx/compose/ui/Modifier;Lcom/mshdabiola/model/Note;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V
+	public static final fun NoteCardPreview (Landroidx/compose/runtime/Composer;I)V
+}
+
+public final class com/mshdabiola/model/Note {
+	public static final field $stable I
+	public fun <init> ()V
+	public fun <init> (JLjava/lang/String;Ljava/lang/String;)V
+	public synthetic fun <init> (JLjava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()J
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun copy (JLjava/lang/String;Ljava/lang/String;)Lcom/mshdabiola/model/Note;
+	public static synthetic fun copy$default (Lcom/mshdabiola/model/Note;JLjava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/mshdabiola/model/Note;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getContent ()Ljava/lang/String;
+	public final fun getId ()J
+	public final fun getTitle ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/mshdabiola/model/testtag/NoteCardTestTags {
+	public static final field $stable I
+	public static final field CONTENT Ljava/lang/String;
+	public static final field INSTANCE Lcom/mshdabiola/model/testtag/NoteCardTestTags;
+	public static final field ROOT Ljava/lang/String;
+	public static final field TITLE Ljava/lang/String;
+}
+
