@@ -7,3 +7,5 @@
 publishToMavenCentral - Publishes to Maven Central
 publishToMavenLocal - Publishes artifacts to the local Maven repository.
 
+./gradlew checkLegacyAbi
+./gradlew updateLegacyAbi
