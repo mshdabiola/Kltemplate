@@ -19,8 +19,8 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.mshdabiola.library.NoteCard
 import com.mshdabiola.library.Note
+import com.mshdabiola.library.NoteCard
 
 @Composable
 fun SamApp() {
