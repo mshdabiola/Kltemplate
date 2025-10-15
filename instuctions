@@ -1,6 +1,6 @@
  ./gradlew :library:generateBaselineProfile
 
-./gradlew app:jvmRunHot -PmainClass=com.hobit.sample.MainAppKt
+./gradlew app:jvmRun -PmainClass=com.hobit.sample.MainAppKt
 ./gradlew app:jvmRun -PmainClass=com.hobit.sample.MainAppKt
 
  ./gradlew renameProjectArtifacts -PnewPackageName=com.abiola.notepad -PnewPrefix=NtP
