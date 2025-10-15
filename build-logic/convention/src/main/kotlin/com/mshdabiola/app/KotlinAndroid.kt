@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -34,13 +34,19 @@ internal fun Project.configureKotlinMultiplatform(
     with(kotlinMultiplatformExtension) {
         jvmToolchain(21)
 
-        androidTarget()
-        // jvm("desktop")
+        androidTarget {
+            compilations.all {
+                compilerOptions.configure {
+                    jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_1_8)
+                }
+            }
+        }
         jvm()
 
         @OptIn(ExperimentalWasmDsl::class)
         wasmJs {
             browser()
+            binaries.library()
             binaries.executable()
         }
     }
@@ -50,14 +56,12 @@ internal fun Project.configureKotlinMultiplatform(
  * Configure base Kotlin with Android options
  */
 internal fun Project.configureKotlinAndroid(
-    commonExtension: CommonExtension<*, *, *, *, *, *>,
+    commonExtension: CommonExtension,
 ) {
     commonExtension.apply {
-        compileSdk = 35
+        compileSdk = 36
 
-        defaultConfig {
-            minSdk = 26 // 24
-        }
+        defaultConfig.minSdk = 26
 
         compileOptions {
 //            sourceCompatibility = JavaVersion.VERSION_21
@@ -108,7 +112,12 @@ private fun Project.configureKotlin() {
             // Override by setting warningsAsErrors=true in your ~/.gradle/gradle.properties
             val warningsAsErrors: String? by project
             allWarningsAsErrors.set(warningsAsErrors.toBoolean())
-            freeCompilerArgs.set(mutableListOf("-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"))
+            freeCompilerArgs.set(
+                mutableListOf(
+                    "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+                    "-Xexpect-actual-classes",
+                ),
+            )
         }
     }
 }
