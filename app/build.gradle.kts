@@ -104,13 +104,6 @@ compose.desktop {
 
 }
 
-configurations.all {
-    attributes {
-        // https://github.com/JetBrains/compose-jb/issues/1404#issuecomment-1146894731
-        attribute(Attribute.of("ui", String::class.java), "awt")
-    }
-}
-
 
 configurations.configureEach {
     exclude("androidx.window.core", "window-core")
